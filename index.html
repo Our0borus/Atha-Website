@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Gayathri Kolagatla | Consultant Surgical Oncologist — AIG Hospitals, Hyderabad</title>
+    <meta name="description" content="Dr. Gayathri Kolagatla is a Consultant Surgical Oncologist at AIG Hospitals, Hyderabad. Specializing in organ-preservation surgeries, minimally invasive laparoscopic &amp; robotic procedures, sarcoma management, and multidisciplinary tumor board care.">
+
+    <!--
+        FONT PAIRING — determined from draditibhatt.com
+        ================================================
+        The reference site loads "Nunito" via Elementor's Google Fonts integration
+        (found in wp-content/uploads/elementor/css/post-14452.css).
+        Headings use Nunito weight 800 (ExtraBold); body text uses weight 400/500.
+        The Astra base-theme fallback stack is -apple-system, BlinkMacSystemFont,
+        Segoe UI, Roboto, etc.  We replicate the same pairing below.
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy:  { 50:'#f0f4f8', 100:'#d9e2ec', 200:'#bcccdc', 300:'#9fb3c8', 400:'#829ab1', 500:'#627d98', 600:'#486581', 700:'#334e68', 800:'#243b53', 900:'#102a43', 950:'#0a1929' },
+                        teal:  { 50:'#effcf6', 100:'#c6f7e2', 200:'#8eedc7', 300:'#65d6ad', 400:'#3ebd93', 500:'#27ab83', 600:'#199473', 700:'#147d64', 800:'#0c6b58', 900:'#014d40' },
+                        coral: { 50:'#fff5f5', 100:'#ffe3e3', 200:'#ffbdbd', 300:'#ff9b9b', 400:'#f86a6a', 500:'#ef4e4e', 600:'#e12d39', 700:'#cf1124', 800:'#ab091e', 900:'#8a041a' },
+                        gold:  { 50:'#fffbea', 100:'#fff3c4', 200:'#fce588', 300:'#fadb5f', 400:'#f7c948', 500:'#f0b429', 600:'#de911d', 700:'#cb6e17', 800:'#b44d12', 900:'#8d2b0b' },
+                        cream: { 50:'#fdfcfa', 100:'#faf7f2', 200:'#f5f0e8' },
+                    },
+                    fontFamily: {
+                        heading: ['"Nunito"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                        body:    ['"Nunito"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* ============================================================
+           ROOT TOKENS
+           ============================================================ */
+        :root {
+            --color-navy:       #102a43;
+            --color-navy-light: #243b53;
+            --color-teal:       #27ab83;
+            --color-teal-dark:  #147d64;
+            --color-coral:      #ef4e4e;
+            --color-gold:       #f0b429;
+            --color-cream:      #faf7f2;
+            --color-cream-dark: #f5f0e8;
+            --font-primary:     'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-primary); font-weight: 400; }
+        h1,h2,h3,h4,h5,h6 { font-family: var(--font-primary); font-weight: 800; }
+
+        /* ============================================================
+           SCROLL PROGRESS BAR
+           ============================================================ */
+        #scroll-progress {
+            position: fixed; top: 0; left: 0; z-index: 9999;
+            height: 3px; width: 0%;
+            background: linear-gradient(90deg, var(--color-teal), var(--color-gold));
+            transition: width 0.1s linear;
+        }
+
+        /* ============================================================
+           HEADER
+           ============================================================ */
+        .site-header { transition: all 0.3s ease; }
+        .site-header.scrolled { box-shadow: 0 4px 20px rgba(16,42,67,0.10); }
+        .site-header.scrolled .header-inner { height: 60px; }
+        .header-inner { height: 76px; transition: height 0.3s ease; }
+
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
+            background: var(--color-teal); border-radius: 2px; transition: width 0.3s ease;
+        }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+        /* Mobile drawer */
+        .mobile-drawer { transform: translateX(100%); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1); }
+        .mobile-drawer.open { transform: translateX(0); }
+        .mobile-overlay { opacity: 0; pointer-events: none; transition: opacity 0.35s ease; }
+        .mobile-overlay.open { opacity: 1; pointer-events: all; }
+
+        /* ============================================================
+           HERO
+           ============================================================ */
+        .hero-bg {
+            background: linear-gradient(135deg, #0a1929 0%, #102a43 40%, #147d64 100%);
+            position: relative; overflow: hidden;
+        }
+        .hero-bg::before {
+            content: ''; position: absolute; top: -50%; right: -30%;
+            width: 800px; height: 800px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(39,171,131,0.15) 0%, transparent 70%);
+        }
+        .hero-bg::after {
+            content: ''; position: absolute; bottom: -40%; left: -20%;
+            width: 600px; height: 600px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(240,180,41,0.08) 0%, transparent 70%);
+        }
+        .photo-frame { position: relative; }
+        .photo-frame::before {
+            content: ''; position: absolute; inset: -12px; border-radius: 50%;
+            border: 3px solid rgba(39,171,131,0.4);
+            animation: pulse-ring 3s ease-in-out infinite;
+        }
+        .photo-frame::after {
+            content: ''; position: absolute; inset: -24px; border-radius: 50%;
+            border: 2px dashed rgba(240,180,41,0.25);
+            animation: spin-slow 20s linear infinite;
+        }
+        @keyframes pulse-ring {
+            0%,100%{transform:scale(1);opacity:.6}
+            50%{transform:scale(1.05);opacity:1}
+        }
+        @keyframes spin-slow { from{transform:rotate(0)}to{transform:rotate(360deg)} }
+
+        /* ============================================================
+           SCROLL REVEAL
+           ============================================================ */
+        .reveal { opacity:0; transform:translateY(40px); transition:opacity .7s ease,transform .7s ease; }
+        .reveal.visible { opacity:1; transform:translateY(0); }
+        .reveal-left { opacity:0; transform:translateX(-40px); transition:opacity .7s ease,transform .7s ease; }
+        .reveal-left.visible { opacity:1; transform:translateX(0); }
+        .reveal-right { opacity:0; transform:translateX(40px); transition:opacity .7s ease,transform .7s ease; }
+        .reveal-right.visible { opacity:1; transform:translateX(0); }
+
+        /* ============================================================
+           SPECIALISATION SLIDER (full-width, distinct from testimonial carousel)
+           ============================================================ */
+        .spec-slider { position: relative; overflow: hidden; width: 100%; }
+        .spec-slider-track { 
+            display: flex; width: 100%; 
+            overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth;
+            scrollbar-width: none; -ms-overflow-style: none;
+        }
+        .spec-slider-track::-webkit-scrollbar { display: none; }
+        .spec-slide { flex: 0 0 100%; width: 100%; box-sizing: border-box; scroll-snap-align: center; }
+        .spec-slide-img {
+            width: 100%; aspect-ratio: 16/7; object-fit: cover;
+            background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-teal-dark) 100%);
+            display: flex; align-items: center; justify-content: center; border-radius: 1rem 1rem 0 0;
+            position: relative; overflow: hidden;
+        }
+        .spec-slide-img .spec-icon-wrap {
+            width: 120px; height: 120px; border-radius: 50%;
+            background: rgba(255,255,255,0.12); backdrop-filter: blur(8px);
+            display: flex; align-items: center; justify-content: center;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+        .spec-arrow {
+            position: absolute; top: 50%; z-index: 10;
+            width: 48px; height: 48px; border-radius: 50%;
+            background: rgba(255,255,255,0.9); color: var(--color-navy);
+            border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            transition: transform .2s ease, box-shadow .2s ease;
+            transform: translateY(-50%);
+        }
+        .spec-arrow:hover { transform: translateY(-50%) scale(1.1); box-shadow: 0 6px 25px rgba(0,0,0,0.2); }
+        .spec-arrow-prev { left: 16px; }
+        .spec-arrow-next { right: 16px; }
+        .spec-dot {
+            width: 32px; height: 4px; border-radius: 2px;
+            background: rgba(16,42,67,0.2); border: none; cursor: pointer;
+            transition: background .3s ease, width .3s ease;
+        }
+        .spec-dot.active { background: var(--color-teal); width: 48px; }
+
+        /* ============================================================
+           BIO TOGGLE
+           ============================================================ */
+        .bio-extra { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
+        .bio-extra.open { max-height: 500px; }
+
+        /* ============================================================
+           TIMELINE
+           ============================================================ */
+        .timeline-line {
+            position: absolute; left: 50%; top: 0; bottom: 0; width: 3px;
+            background: linear-gradient(180deg, var(--color-teal), var(--color-navy));
+            transform: translateX(-50%); border-radius: 3px;
+        }
+        @media (max-width:768px) { .timeline-line { left: 24px; } }
+        .timeline-dot {
+            width: 16px; height: 16px; border-radius: 50%; background: var(--color-teal);
+            border: 3px solid white; box-shadow: 0 0 0 3px var(--color-teal);
+            position: absolute; left: 50%; top: 24px; transform: translateX(-50%); z-index: 2;
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+        .timeline-item:hover .timeline-dot {
+            transform: translateX(-50%) scale(1.3);
+            box-shadow: 0 0 0 6px rgba(39,171,131,.25);
+        }
+        @media (max-width:768px) { .timeline-dot { left: 24px; } }
+
+        /* ============================================================
+           TESTIMONIAL CAROUSEL (visually distinct from spec slider)
+           ============================================================ */
+        .testi-viewport { overflow: hidden; width: 100%; }
+        .testi-track { 
+            display: flex; width: 100%; 
+            overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth;
+            scrollbar-width: none; -ms-overflow-style: none;
+        }
+        .testi-track::-webkit-scrollbar { display: none; }
+        .testi-slide { flex: 0 0 100%; width: 100%; box-sizing: border-box; scroll-snap-align: center; }
+        .testi-dot {
+            width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,.3);
+            border: none; cursor: pointer; transition: background .3s ease, transform .3s ease;
+        }
+        .testi-dot.active { background: var(--color-teal); transform: scale(1.3); }
+
+        /* ============================================================
+           FAQ ACCORDION
+           ============================================================ */
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height .4s ease; }
+        .faq-answer.open { max-height: 300px; }
+        .faq-chevron { transition: transform .3s ease; }
+        .faq-chevron.open { transform: rotate(180deg); }
+
+        /* ============================================================
+           FORM VALIDATION
+           ============================================================ */
+        .field-error { border-color: var(--color-coral) !important; box-shadow: 0 0 0 3px rgba(239,78,78,.15) !important; }
+        .error-msg { color: var(--color-coral); font-size: .75rem; margin-top: 4px; display: none; }
+        .error-msg.show { display: block; }
+        .success-msg {
+            background: rgba(39,171,131,.1); border: 1px solid var(--color-teal);
+            color: var(--color-teal-dark); border-radius: 12px; padding: 1.5rem;
+            text-align: center; display: none;
+        }
+        .success-msg.show { display: block; }
+
+        /* ============================================================
+           BACK TO TOP
+           ============================================================ */
+        #back-to-top {
+            opacity: 0; transform: translateY(20px); pointer-events: none;
+            transition: opacity .3s ease, transform .3s ease;
+        }
+        #back-to-top.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
+
+        /* Floating buttons */
+        .float-btn {
+            width: 56px; height: 56px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,.2);
+            transition: transform .3s ease, box-shadow .3s ease;
+            text-decoration: none;
+        }
+        .float-btn:hover { transform: scale(1.1); box-shadow: 0 6px 25px rgba(0,0,0,.3); }
+
+        /* Dot pattern overlay */
+        .pattern-dots {
+            background-image: radial-gradient(circle, rgba(16,42,67,.04) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        /* Focus states */
+        a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+            outline: 2px solid var(--color-teal); outline-offset: 2px; border-radius: 4px;
+        }
+
+        /* ============================================================
+           PREFERS-REDUCED-MOTION
+           ============================================================ */
+        @media (prefers-reduced-motion: reduce) {
+            .reveal,.reveal-left,.reveal-right { transition: none; opacity: 1; transform: none; }
+            .photo-frame::before,.photo-frame::after { animation: none; }
+            .spec-slider-track,.testi-track { transition: none !important; }
+            .bio-extra { transition: none; }
+            .faq-answer { transition: none; }
+        }
+    </style>
+</head>
+
+<body class="bg-cream-50 text-navy-900 font-body antialiased">
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
+
+    <!-- ============================================================
+         HEADER
+         ============================================================ -->
+    <header class="site-header sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-navy-100/50" role="banner">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="header-inner flex items-center justify-between">
+                <!-- Logo: Ribbon Brandmark + Name + Tagline (Inspired by draditibhatt.com brand identity) -->
+                <a href="#" class="flex items-center space-x-3.5 group" aria-label="Dr. Gayathri Kolagatla — Home">
+                    <!-- Ribbon Monogram Icon -->
+                    <svg class="w-10 h-10 flex-shrink-0 transition-transform group-hover:scale-105" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="gk-ribbon-1" x1="6" y1="4" x2="42" y2="44" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#102a43"/>
+                                <stop offset="0.6" stop-color="#147d64"/>
+                                <stop offset="1" stop-color="#27ab83"/>
+                            </linearGradient>
+                            <linearGradient id="gk-ribbon-2" x1="42" y1="4" x2="6" y2="44" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#27ab83"/>
+                                <stop offset="0.7" stop-color="#3ebd93"/>
+                                <stop offset="1" stop-color="#f0b429"/>
+                            </linearGradient>
+                            <filter id="ribbon-shadow" x="-10%" y="-10%" width="130%" height="130%">
+                                <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.15"/>
+                            </filter>
+                        </defs>
+                        <!-- Fluid Oncology Ribbon Loop -->
+                        <path d="M14 42 C20 34 35 22 35 15 C35 8.9 30.1 4 24 4 C17.9 4 13 8.9 13 15 C13 22 28 34 34 42" 
+                              stroke="url(#gk-ribbon-1)" stroke-width="4.5" stroke-linecap="round" fill="none" filter="url(#ribbon-shadow)"/>
+                        <path d="M21 10 C22 9.4 23 9 24 9 C27.3 9 30 11.7 30 15 C30 20 22 27 16 34" 
+                              stroke="url(#gk-ribbon-2)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.9"/>
+                        <circle cx="24" cy="15" r="2.5" fill="#f0b429"/>
+                    </svg>
+                    <div class="flex flex-col">
+                        <span class="font-heading font-extrabold text-[1.05rem] sm:text-[1.15rem] text-navy-900 tracking-tight leading-none group-hover:text-teal-700 transition-colors uppercase">DR. GAYATHRI KOLAGATLA</span>
+                        <span class="text-[9.5px] sm:text-[10.5px] font-bold tracking-[0.16em] text-teal-600 uppercase mt-1">expertise • precision • care</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden lg:flex items-center space-x-8 font-medium text-sm text-navy-600" aria-label="Primary navigation">
+                    <a href="#about" class="nav-link hover:text-teal-600 transition-colors py-2" data-section="about">About</a>
+                    <a href="#specialisations" class="nav-link hover:text-teal-600 transition-colors py-2" data-section="specialisations">Specialisations</a>
+                    <a href="#experience" class="nav-link hover:text-teal-600 transition-colors py-2" data-section="experience">Experience</a>
+                    <a href="#education" class="nav-link hover:text-teal-600 transition-colors py-2" data-section="education">Education</a>
+                    <a href="#stories" class="nav-link hover:text-teal-600 transition-colors py-2" data-section="stories">Patient Stories</a>
+                    <a href="#faq" class="nav-link hover:text-teal-600 transition-colors py-2" data-section="faq">FAQ</a>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <a href="#appointment" class="hidden md:inline-flex items-center bg-gradient-to-r from-teal-600 to-teal-500 hover:from-teal-700 hover:to-teal-600 text-white px-5 py-2.5 rounded-xl text-sm font-bold shadow-md hover:shadow-lg transition-all">
+                        <i class="fa-regular fa-calendar-check mr-2"></i>Book Appointment
+                    </a>
+                    <button id="hamburger-btn" class="lg:hidden p-2 rounded-lg hover:bg-navy-50 transition-colors" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+                        <i class="fa-solid fa-bars text-navy-700 text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Overlay -->
+    <div id="mobile-overlay" class="mobile-overlay fixed inset-0 z-[60] bg-navy-950/50 backdrop-blur-sm"></div>
+    <!-- Mobile Drawer -->
+    <nav id="mobile-menu" class="mobile-drawer fixed top-0 right-0 z-[70] w-80 max-w-[85vw] h-full bg-white shadow-2xl" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
+        <div class="flex items-center justify-between p-6 border-b border-navy-100">
+            <span class="font-heading font-extrabold text-lg text-navy-900">Menu</span>
+            <button id="close-menu-btn" class="p-2 rounded-lg hover:bg-navy-50 transition-colors" aria-label="Close menu">
+                <i class="fa-solid fa-xmark text-navy-700 text-xl"></i>
+            </button>
+        </div>
+        <div class="p-6 space-y-2">
+            <a href="#about"          class="mobile-nav-link block py-3 px-4 rounded-lg text-navy-700 font-medium hover:bg-teal-50 hover:text-teal-700 transition-colors">About</a>
+            <a href="#specialisations" class="mobile-nav-link block py-3 px-4 rounded-lg text-navy-700 font-medium hover:bg-teal-50 hover:text-teal-700 transition-colors">Specialisations</a>
+            <a href="#experience"     class="mobile-nav-link block py-3 px-4 rounded-lg text-navy-700 font-medium hover:bg-teal-50 hover:text-teal-700 transition-colors">Experience</a>
+            <a href="#education"      class="mobile-nav-link block py-3 px-4 rounded-lg text-navy-700 font-medium hover:bg-teal-50 hover:text-teal-700 transition-colors">Education</a>
+            <a href="#stories"        class="mobile-nav-link block py-3 px-4 rounded-lg text-navy-700 font-medium hover:bg-teal-50 hover:text-teal-700 transition-colors">Patient Stories</a>
+            <a href="#faq"            class="mobile-nav-link block py-3 px-4 rounded-lg text-navy-700 font-medium hover:bg-teal-50 hover:text-teal-700 transition-colors">FAQ</a>
+            <a href="#appointment"    class="block mt-4 text-center bg-gradient-to-r from-teal-600 to-teal-500 text-white py-3 px-6 rounded-xl font-bold shadow-md">
+                <i class="fa-regular fa-calendar-check mr-2"></i>Book Appointment
+            </a>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 p-6 border-t border-navy-100 text-sm text-navy-500 space-y-2">
+            <a href="tel:+919949899526" class="flex items-center space-x-2 hover:text-teal-600"><i class="fa-solid fa-phone text-xs"></i><span>+91-9949899526</span></a>
+            <a href="mailto:kolagatlagayathri@gmail.com" class="flex items-center space-x-2 hover:text-teal-600"><i class="fa-solid fa-envelope text-xs"></i><span>kolagatlagayathri@gmail.com</span></a>
+        </div>
+    </nav>
+
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <section class="hero-bg text-white py-20 lg:py-32 relative z-10" aria-label="Hero">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                <div class="lg:col-span-7 space-y-6 relative z-10">
+                    <span class="inline-flex items-center bg-white/10 backdrop-blur-sm text-teal-200 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider border border-white/15">
+                        <i class="fa-solid fa-hospital mr-2 text-teal-300"></i>
+                        Consultant Surgical Oncologist — AIG Hospitals, Hyderabad
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.12]">
+                        Advanced Cancer Care <br class="hidden sm:block">
+                        <span class="bg-gradient-to-r from-teal-300 to-gold-300 bg-clip-text text-transparent">&amp; Precision Surgery</span>
+                    </h1>
+                    <p class="text-lg text-navy-200 max-w-xl leading-relaxed font-medium">
+                        Specialized in high-complexity oncological resections, organ-preservation treatments, and advanced minimally invasive laparoscopic &amp; robotic procedures.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <a href="#appointment" class="bg-gradient-to-r from-teal-500 to-teal-400 hover:from-teal-600 hover:to-teal-500 text-white font-bold px-7 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all text-sm inline-flex items-center">
+                            <i class="fa-regular fa-calendar-check mr-2"></i>Book an Appointment
+                        </a>
+                        <a href="#about" class="border-2 border-white/25 text-white font-bold px-7 py-3.5 rounded-xl hover:bg-white/10 hover:border-white/40 transition-all text-sm backdrop-blur-sm inline-flex items-center">
+                            Know More <i class="fa-solid fa-arrow-down ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 flex justify-center relative z-10">
+                    <div class="photo-frame w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden bg-gradient-to-br from-navy-800 to-teal-900 flex items-center justify-center shadow-2xl">
+                        <!-- TODO: Replace placeholder with Dr. Gayathri's professional photo -->
+                        <div class="text-center p-6 text-teal-200">
+                            <i class="fa-solid fa-user-doctor text-7xl mb-3 opacity-60"></i>
+                            <p class="text-xs font-medium opacity-60">Photo placeholder</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="mt-16 pt-10 border-t border-white/10">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto">
+                    <div class="reveal flex items-center space-x-4 bg-white/5 backdrop-blur-sm rounded-xl px-5 py-4 border border-white/10">
+                        <div class="w-12 h-12 rounded-lg bg-teal-500/20 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-award text-teal-300 text-lg"></i></div>
+                        <div><span class="block text-white font-extrabold text-base">DrNB Surgical Oncology</span><span class="text-navy-300 text-xs">NIMS, Hyderabad</span></div>
+                    </div>
+                    <div class="reveal flex items-center space-x-4 bg-white/5 backdrop-blur-sm rounded-xl px-5 py-4 border border-white/10">
+                        <div class="w-12 h-12 rounded-lg bg-gold-500/20 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-robot text-gold-300 text-lg"></i></div>
+                        <div><span class="block text-white font-extrabold text-base">Robotic &amp; Laparoscopic</span><span class="text-navy-300 text-xs">Minimally Invasive Surgery</span></div>
+                    </div>
+                    <div class="reveal flex items-center space-x-4 bg-white/5 backdrop-blur-sm rounded-xl px-5 py-4 border border-white/10">
+                        <div class="w-12 h-12 rounded-lg bg-coral-500/20 flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-users-medical text-coral-300 text-lg"></i></div>
+                        <div><span class="block text-white font-extrabold text-base">Tumor Board Care</span><span class="text-navy-300 text-xs">Multidisciplinary Approach</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         AREAS OF SPECIALISATION — AUTO-ADVANCING IMAGE SLIDER
+         ============================================================ -->
+    <section id="specialisations" class="py-20 lg:py-28 bg-cream-100 pattern-dots" aria-label="Areas of Specialisation">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-14 reveal">
+                <span class="text-teal-600 font-bold text-xs uppercase tracking-[0.2em]">Clinical Focus</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy-900">Areas of Specialisation</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-teal-500 to-gold-400 mx-auto rounded-full"></div>
+                <p class="text-navy-500 max-w-2xl mx-auto text-base leading-relaxed">Comprehensive management and evidence-based surgical treatments across various oncology domains.</p>
+            </div>
+
+            <!-- Slider -->
+            <div class="reveal spec-slider rounded-2xl bg-white shadow-lg border border-navy-100/50 overflow-hidden" id="spec-slider" role="region" aria-roledescription="carousel" aria-label="Specialisations slider" tabindex="0">
+                <div class="spec-slider-track" id="spec-track">
+                    <!-- Slide 1 -->
+                    <div class="spec-slide" role="group" aria-roledescription="slide" aria-label="Slide 1 of 4: Organ Preservation Surgeries">
+                        <!-- TODO: Replace icon illustration below with a licensed photo of organ-preservation surgery or related medical illustration -->
+                        <div class="spec-slide-img" style="background: linear-gradient(135deg, #014d40 0%, #199473 100%);">
+                            <div class="spec-icon-wrap"><i class="fa-solid fa-shield-heart text-white text-5xl"></i></div>
+                        </div>
+                        <div class="p-8 sm:p-10">
+                            <h3 class="text-2xl font-extrabold text-navy-900 mb-3">Organ Preservation Surgeries</h3>
+                            <p class="text-navy-500 leading-relaxed">Tailored surgical strategies focused on eradicating cancerous tissue while preserving healthy surrounding organ architecture and optimizing post-surgical functional outcomes.</p>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="spec-slide" role="group" aria-roledescription="slide" aria-label="Slide 2 of 4: Minimally Invasive Surgery">
+                        <!-- TODO: Replace icon illustration below with a licensed photo of robotic/laparoscopic surgery -->
+                        <div class="spec-slide-img" style="background: linear-gradient(135deg, #243b53 0%, #3ebd93 100%);">
+                            <div class="spec-icon-wrap"><i class="fa-solid fa-robot text-white text-5xl"></i></div>
+                        </div>
+                        <div class="p-8 sm:p-10">
+                            <h3 class="text-2xl font-extrabold text-navy-900 mb-3">Minimally Invasive (Laparoscopic &amp; Robotic)</h3>
+                            <p class="text-navy-500 leading-relaxed">Advanced keyhole and robotic-assisted interventions designed to offer precision maneuvers in tight anatomical spaces, resulting in reduced blood loss and rapid healing.</p>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="spec-slide" role="group" aria-roledescription="slide" aria-label="Slide 3 of 4: Sarcoma Management">
+                        <!-- TODO: Replace icon illustration below with a licensed photo related to sarcoma surgery or MDT planning -->
+                        <div class="spec-slide-img" style="background: linear-gradient(135deg, #102a43 0%, #ef4e4e 100%);">
+                            <div class="spec-icon-wrap"><i class="fa-solid fa-dna text-white text-5xl"></i></div>
+                        </div>
+                        <div class="p-8 sm:p-10">
+                            <h3 class="text-2xl font-extrabold text-navy-900 mb-3">Sarcoma Management &amp; Complex Resections</h3>
+                            <p class="text-navy-500 leading-relaxed">Multidisciplinary planning and execution for complex sarcomas and advanced abdominal/pelvic malignancies requiring multi-organ teamwork.</p>
+                        </div>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="spec-slide" role="group" aria-roledescription="slide" aria-label="Slide 4 of 4: Tumor Board Care">
+                        <!-- TODO: Replace icon illustration below with a licensed photo of a tumor board / MDT meeting -->
+                        <div class="spec-slide-img" style="background: linear-gradient(135deg, #334e68 0%, #f0b429 100%);">
+                            <div class="spec-icon-wrap"><i class="fa-solid fa-stethoscope text-white text-5xl"></i></div>
+                        </div>
+                        <div class="p-8 sm:p-10">
+                            <h3 class="text-2xl font-extrabold text-navy-900 mb-3">Multidisciplinary Tumor Board Care</h3>
+                            <p class="text-navy-500 leading-relaxed">Collaborative tumor board evaluations ensuring that every patient receives a synchronized plan combining surgery, medical oncology, and radiation therapy.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Arrows -->
+                <button class="spec-arrow spec-arrow-prev" onclick="specPrev()" aria-label="Previous specialisation"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="spec-arrow spec-arrow-next" onclick="specNext()" aria-label="Next specialisation"><i class="fa-solid fa-chevron-right"></i></button>
+                <!-- Dots -->
+                <div class="flex justify-center space-x-3 py-5" id="spec-dots" role="tablist" aria-label="Specialisation slides"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         MEET DR. GAYATHRI
+         ============================================================ -->
+    <section id="about" class="py-20 lg:py-28 bg-white" aria-label="About Dr. Gayathri">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                <div class="lg:col-span-5 reveal-left">
+                    <div class="relative">
+                        <!-- TODO: Replace with Dr. Gayathri's professional photo -->
+                        <div class="aspect-[4/5] bg-gradient-to-br from-cream-200 to-navy-50 rounded-2xl overflow-hidden shadow-xl flex items-center justify-center border border-navy-100/50">
+                            <div class="text-center text-navy-300"><i class="fa-solid fa-user-doctor text-6xl mb-4"></i><p class="text-sm font-medium">Photo placeholder</p></div>
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-teal-100 rounded-2xl -z-10"></div>
+                        <div class="absolute -top-4 -left-4 w-24 h-24 bg-gold-100 rounded-2xl -z-10"></div>
+                    </div>
+                </div>
+                <div class="lg:col-span-7 space-y-6 reveal-right">
+                    <span class="text-teal-600 font-bold text-xs uppercase tracking-[0.2em]">About Me</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900">Meet Dr. Gayathri Kolagatla</h2>
+                    <p class="text-navy-400 font-bold text-lg">Consultant Surgical Oncologist</p>
+                    <div class="w-16 h-1 bg-gradient-to-r from-teal-500 to-gold-400 rounded-full"></div>
+                    <div class="text-navy-600 text-base leading-relaxed space-y-4">
+                        <p>Dr. Gayathri Kolagatla is an expert surgical oncologist with advanced specialized training from premier medical institutes like the Nizam's Institute of Medical Sciences (NIMS), Hyderabad. She is dedicated to a holistic approach that involves not just performing complex oncological procedures but working closely with patients throughout their treatment and rehabilitation.</p>
+                        <div id="bio-extra" class="bio-extra space-y-4">
+                            <p>With comprehensive experience handling high-volume surgical emergencies, multi-organ resections, and minimally invasive techniques, she is committed to minimizing recovery time while maximizing oncological outcomes.</p>
+                            <p>Misdiagnoses, apprehensions about extensive surgery, and the complexities involved are major barriers for patients contacting a specialist on time. Spreading awareness about precision cancer treatment ensures patients seek the right intervention at the right stage.</p>
+                        </div>
+                    </div>
+                    <button id="bio-toggle" onclick="toggleBio()" class="inline-flex items-center text-teal-600 font-bold text-sm hover:text-teal-800 transition-colors gap-2 group">
+                        <span id="bio-toggle-text">Read More</span>
+                        <i id="bio-toggle-icon" class="fa-solid fa-arrow-down text-xs transition-transform group-hover:translate-y-0.5"></i>
+                    </button>
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="bg-cream-100 rounded-xl p-4 border border-cream-200"><i class="fa-solid fa-hospital text-teal-500 mb-2"></i><p class="text-sm font-extrabold text-navy-800">AIG Hospitals</p><p class="text-xs text-navy-400">Current Practice</p></div>
+                        <div class="bg-cream-100 rounded-xl p-4 border border-cream-200"><i class="fa-solid fa-graduation-cap text-gold-500 mb-2"></i><p class="text-sm font-extrabold text-navy-800">DrNB (NIMS)</p><p class="text-xs text-navy-400">Super-Speciality Training</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         EXPERIENCE TIMELINE
+         ============================================================ -->
+    <section id="experience" class="py-20 lg:py-28 bg-cream-100" aria-label="Experience & Affiliations">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-16 reveal">
+                <span class="text-teal-600 font-bold text-xs uppercase tracking-[0.2em]">Institutions</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900">Hospital Affiliations &amp; Experience</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-teal-500 to-gold-400 mx-auto rounded-full"></div>
+            </div>
+            <div class="relative">
+                <div class="timeline-line" aria-hidden="true"></div>
+                <div class="timeline-item relative mb-12 reveal">
+                    <div class="timeline-dot" aria-hidden="true"></div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="md:text-right md:pr-12 pl-14 md:pl-0">
+                            <span class="inline-block bg-teal-100 text-teal-700 text-xs font-bold px-3 py-1 rounded-full mb-2">Jan 2023 — Present</span>
+                            <h3 class="text-xl font-extrabold text-navy-900">AIG Hospitals, Hyderabad</h3>
+                            <p class="text-navy-500 text-sm mt-1">Consultant — Surgical Oncology</p>
+                        </div>
+                        <div class="hidden md:block"></div>
+                    </div>
+                </div>
+                <div class="timeline-item relative mb-12 reveal">
+                    <div class="timeline-dot" aria-hidden="true"></div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="hidden md:block"></div>
+                        <div class="md:pl-12 pl-14">
+                            <span class="inline-block bg-gold-100 text-gold-700 text-xs font-bold px-3 py-1 rounded-full mb-2">2019 — 2022</span>
+                            <h3 class="text-xl font-extrabold text-navy-900">Nizam's Institute of Medical Sciences (NIMS), Hyderabad</h3>
+                            <p class="text-navy-500 text-sm mt-1">DrNB Trainee — Surgical Oncology</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item relative mb-12 reveal">
+                    <div class="timeline-dot" aria-hidden="true"></div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="md:text-right md:pr-12 pl-14 md:pl-0">
+                            <span class="inline-block bg-navy-100 text-navy-700 text-xs font-bold px-3 py-1 rounded-full mb-2">2018 — 2019</span>
+                            <h3 class="text-xl font-extrabold text-navy-900">Pinnamaneni Siddhartha Institute of Medical Sciences, Gannavaram</h3>
+                            <p class="text-navy-500 text-sm mt-1">Assistant Professor</p>
+                        </div>
+                        <div class="hidden md:block"></div>
+                    </div>
+                </div>
+                <div class="timeline-item relative mb-4 reveal">
+                    <div class="timeline-dot" aria-hidden="true"></div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="hidden md:block"></div>
+                        <div class="md:pl-12 pl-14">
+                            <span class="inline-block bg-coral-100 text-coral-700 text-xs font-bold px-3 py-1 rounded-full mb-2">2017 — 2018</span>
+                            <h3 class="text-xl font-extrabold text-navy-900">Rangaraya Medical College, Kakinada</h3>
+                            <p class="text-navy-500 text-sm mt-1">Senior Resident</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         EDUCATION & PUBLICATIONS
+         ============================================================ -->
+    <section id="education" class="py-20 lg:py-28 bg-white" aria-label="Education & Publications">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-16 reveal">
+                <span class="text-teal-600 font-bold text-xs uppercase tracking-[0.2em]">Academics</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900">Education &amp; Publications</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-teal-500 to-gold-400 mx-auto rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <div class="reveal space-y-5">
+                    <h3 class="text-xl font-extrabold text-navy-900 flex items-center gap-3"><i class="fa-solid fa-graduation-cap text-teal-500"></i> Education</h3>
+                    <div class="space-y-4">
+                        <div class="bg-cream-50 rounded-xl p-5 border border-cream-200 hover:shadow-md transition-shadow"><h4 class="font-bold text-navy-900">DrNB — Surgical Oncology</h4><p class="text-sm text-navy-500 mt-1">Nizam's Institute of Medical Sciences (NIMS), Hyderabad</p></div>
+                        <div class="bg-cream-50 rounded-xl p-5 border border-cream-200 hover:shadow-md transition-shadow"><h4 class="font-bold text-navy-900">MS — General Surgery</h4><p class="text-sm text-navy-500 mt-1">Postgraduate training in general surgery</p></div>
+                        <div class="bg-cream-50 rounded-xl p-5 border border-cream-200 hover:shadow-md transition-shadow"><h4 class="font-bold text-navy-900">MBBS</h4><p class="text-sm text-navy-500 mt-1">Bachelor of Medicine and Bachelor of Surgery</p></div>
+                    </div>
+                </div>
+                <div class="reveal space-y-5">
+                    <h3 class="text-xl font-extrabold text-navy-900 flex items-center gap-3"><i class="fa-solid fa-book-open text-gold-500"></i> Publications</h3>
+                    <div class="bg-cream-50 rounded-xl p-6 border border-cream-200 hover:shadow-md transition-shadow">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 bg-gold-100 text-gold-600 rounded-lg flex items-center justify-center flex-shrink-0 mt-1"><i class="fa-solid fa-file-lines"></i></div>
+                            <div><h4 class="font-bold text-navy-900">Journal of Cardiovascular Disease Research (JCVDR)</h4><p class="text-sm text-navy-500 mt-1">Published 2022</p><span class="inline-block mt-2 text-xs bg-navy-100 text-navy-600 px-3 py-1 rounded-full font-bold">Peer-Reviewed Publication</span></div>
+                        </div>
+                    </div>
+                    <p class="text-sm text-navy-400 italic">Additional publications may be added as they become available.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         PATIENT STORIES — TESTIMONIAL CAROUSEL
+         ============================================================ -->
+    <section id="stories" class="py-20 lg:py-28 bg-navy-950 text-white" aria-label="Patient Stories">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-14 reveal">
+                <span class="text-teal-400 font-bold text-xs uppercase tracking-[0.2em]">Testimonials</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Patient Recovery Stories</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-teal-500 to-gold-400 mx-auto rounded-full"></div>
+                <p class="text-navy-300 max-w-xl mx-auto text-sm">Read what patients and families say about their journey and compassionate care.</p>
+            </div>
+
+            <div class="reveal relative bg-navy-900/60 backdrop-blur border border-navy-700/50 rounded-2xl shadow-2xl overflow-hidden"
+                 id="testi-container" role="region" aria-roledescription="carousel" aria-label="Patient testimonials">
+                <div class="testi-viewport">
+                    <div class="testi-track" id="testi-track">
+                        <!--
+                            ============================================================
+                            TESTIMONIAL BUG FIX — ROOT CAUSE EXPLANATION
+                            ============================================================
+                            The original code used a JS array + separate DOM updates for
+                            text, author, and condition via getElementById. Those three
+                            .innerText assignments happened independently. If rapid
+                            clicking occurred or the initial HTML didn't match
+                            testimonials[0], a mismatch could appear (e.g. old condition
+                            label lingering while new text renders). The fix: render ALL
+                            slides as full DOM nodes inside a CSS flex track (same
+                            pattern as the spec slider), so each slide is a single
+                            atomic DOM element — text, author, and condition can never
+                            desync. No partial updates, no race conditions, no stale
+                            content.
+                            ============================================================
+                        -->
+
+                        <!-- ⚠️ SAMPLE TESTIMONIAL 1 — Replace with real, consented patient feedback before publishing -->
+                        <div class="testi-slide p-8 sm:p-12" role="group" aria-roledescription="slide" aria-label="Testimonial 1 of 5">
+                            <div class="flex text-gold-400 space-x-1 text-sm mb-4" aria-label="5 star rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                            <blockquote class="text-navy-100 text-base sm:text-lg italic leading-relaxed mb-6">&ldquo;Dr. Gayathri gave us immense hope during our darkest hours. Her clear explanations before the robotic surgery and her reassuring presence post-op made all the difference. Forever grateful for her skill and empathy.&rdquo;</blockquote>
+                            <p class="font-extrabold text-white text-base">— Rajesh V., Family Member</p>
+                            <p class="text-xs text-teal-400 mt-1">Patient treated for Abdominal Oncology</p>
+                            <p class="mt-4 text-[10px] text-navy-500 bg-navy-800/50 px-3 py-1.5 rounded-lg inline-block">[Sample — replace with real, consented patient feedback]</p>
+                        </div>
+
+                        <!-- ⚠️ SAMPLE TESTIMONIAL 2 — Replace with real, consented patient feedback before publishing -->
+                        <div class="testi-slide p-8 sm:p-12" role="group" aria-roledescription="slide" aria-label="Testimonial 2 of 5">
+                            <div class="flex text-gold-400 space-x-1 text-sm mb-4" aria-label="5 star rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                            <blockquote class="text-navy-100 text-base sm:text-lg italic leading-relaxed mb-6">&ldquo;Finding a surgeon who combines high technical expertise with deep emotional intelligence is rare. Dr. Gayathri ensured my mother's organ-preservation surgery went smoothly with minimal recovery complications.&rdquo;</blockquote>
+                            <p class="font-extrabold text-white text-base">— Sunitha R., Patient Attendant</p>
+                            <p class="text-xs text-teal-400 mt-1">Patient treated with Organ Preservation Surgery</p>
+                            <p class="mt-4 text-[10px] text-navy-500 bg-navy-800/50 px-3 py-1.5 rounded-lg inline-block">[Sample — replace with real, consented patient feedback]</p>
+                        </div>
+
+                        <!-- ⚠️ SAMPLE TESTIMONIAL 3 — Replace with real, consented patient feedback before publishing -->
+                        <div class="testi-slide p-8 sm:p-12" role="group" aria-roledescription="slide" aria-label="Testimonial 3 of 5">
+                            <div class="flex text-gold-400 space-x-1 text-sm mb-4" aria-label="5 star rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                            <blockquote class="text-navy-100 text-base sm:text-lg italic leading-relaxed mb-6">&ldquo;The precision of the minimally invasive procedure was astonishing. From our initial consultation at AIG Hospitals to follow-ups, Dr. Gayathri was exceptionally thorough and approachable.&rdquo;</blockquote>
+                            <p class="font-extrabold text-white text-base">— Ramesh K., Patient</p>
+                            <p class="text-xs text-teal-400 mt-1">Laparoscopic Oncological Resection</p>
+                            <p class="mt-4 text-[10px] text-navy-500 bg-navy-800/50 px-3 py-1.5 rounded-lg inline-block">[Sample — replace with real, consented patient feedback]</p>
+                        </div>
+
+                        <!-- ⚠️ SAMPLE TESTIMONIAL 4 — Replace with real, consented patient feedback before publishing -->
+                        <div class="testi-slide p-8 sm:p-12" role="group" aria-roledescription="slide" aria-label="Testimonial 4 of 5">
+                            <div class="flex text-gold-400 space-x-1 text-sm mb-4" aria-label="5 star rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                            <blockquote class="text-navy-100 text-base sm:text-lg italic leading-relaxed mb-6">&ldquo;Her involvement in the tumor board discussions gave us confidence that we were receiving a well-rounded medical plan. Highly professional, knowledgeable, and caring.&rdquo;</blockquote>
+                            <p class="font-extrabold text-white text-base">— Anand M., Family Member</p>
+                            <p class="text-xs text-teal-400 mt-1">Complex Sarcoma Management</p>
+                            <p class="mt-4 text-[10px] text-navy-500 bg-navy-800/50 px-3 py-1.5 rounded-lg inline-block">[Sample — replace with real, consented patient feedback]</p>
+                        </div>
+
+                        <!-- ⚠️ SAMPLE TESTIMONIAL 5 — Replace with real, consented patient feedback before publishing -->
+                        <div class="testi-slide p-8 sm:p-12" role="group" aria-roledescription="slide" aria-label="Testimonial 5 of 5">
+                            <div class="flex text-gold-400 space-x-1 text-sm mb-4" aria-label="5 star rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                            <blockquote class="text-navy-100 text-base sm:text-lg italic leading-relaxed mb-6">&ldquo;Dr. Gayathri's comforting words and expert surgical hands changed our lives. She explains everything transparently without rushing you, making you feel completely secure.&rdquo;</blockquote>
+                            <p class="font-extrabold text-white text-base">— Priya S., Patient</p>
+                            <p class="text-xs text-teal-400 mt-1">Advanced Oncological Care</p>
+                            <p class="mt-4 text-[10px] text-navy-500 bg-navy-800/50 px-3 py-1.5 rounded-lg inline-block">[Sample — replace with real, consented patient feedback]</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Controls -->
+                <div class="flex items-center justify-between px-8 sm:px-12 py-5 border-t border-navy-700/50">
+                    <button onclick="testiPrev()" class="bg-navy-800 hover:bg-navy-700 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors" aria-label="Previous testimonial"><i class="fa-solid fa-chevron-left text-sm"></i></button>
+                    <div class="flex space-x-2" id="testi-dots" role="tablist" aria-label="Testimonial slides"></div>
+                    <button onclick="testiNext()" class="bg-teal-600 hover:bg-teal-500 text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors" aria-label="Next testimonial"><i class="fa-solid fa-chevron-right text-sm"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FAQ
+         ============================================================ -->
+    <section id="faq" class="py-20 lg:py-28 bg-cream-100 pattern-dots" aria-label="FAQ">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-14 reveal">
+                <span class="text-teal-600 font-bold text-xs uppercase tracking-[0.2em]">Have Questions?</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900">Frequently Asked Questions</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-teal-500 to-gold-400 mx-auto rounded-full"></div>
+            </div>
+            <div class="space-y-4 reveal">
+                <div class="faq-item bg-white rounded-xl border border-navy-100/50 overflow-hidden shadow-sm">
+                    <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between font-bold text-navy-900 hover:text-teal-700 transition-colors" aria-expanded="false"><span>What is a Surgical Oncologist?</span><i class="fa-solid fa-chevron-down faq-chevron text-navy-300 text-sm"></i></button>
+                    <div class="faq-answer px-6 text-navy-600 text-sm leading-relaxed"><div class="pb-5">A surgical oncologist is a doctor who specializes in using surgery to diagnose, stage, and treat cancer. They work as part of a multidisciplinary team that may include medical oncologists, radiation oncologists, pathologists, and other specialists to create comprehensive treatment plans tailored to each patient.</div></div>
+                </div>
+                <div class="faq-item bg-white rounded-xl border border-navy-100/50 overflow-hidden shadow-sm">
+                    <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between font-bold text-navy-900 hover:text-teal-700 transition-colors" aria-expanded="false"><span>When should I consult a Surgical Oncologist?</span><i class="fa-solid fa-chevron-down faq-chevron text-navy-300 text-sm"></i></button>
+                    <div class="faq-answer px-6 text-navy-600 text-sm leading-relaxed"><div class="pb-5">You may be referred to a surgical oncologist after a diagnosis of cancer, or when a biopsy or imaging reveals a suspicious mass. Early consultation can help determine the most appropriate treatment path and may improve outcomes.</div></div>
+                </div>
+                <div class="faq-item bg-white rounded-xl border border-navy-100/50 overflow-hidden shadow-sm">
+                    <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between font-bold text-navy-900 hover:text-teal-700 transition-colors" aria-expanded="false"><span>What is organ-preservation surgery in cancer treatment?</span><i class="fa-solid fa-chevron-down faq-chevron text-navy-300 text-sm"></i></button>
+                    <div class="faq-answer px-6 text-navy-600 text-sm leading-relaxed"><div class="pb-5">Organ-preservation surgery aims to remove cancerous tissue while keeping the affected organ as functional as possible. Rather than removing an entire organ, surgeons use precise techniques to target only the tumour and necessary margins, helping maintain quality of life.</div></div>
+                </div>
+                <div class="faq-item bg-white rounded-xl border border-navy-100/50 overflow-hidden shadow-sm">
+                    <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between font-bold text-navy-900 hover:text-teal-700 transition-colors" aria-expanded="false"><span>What are the advantages of minimally invasive cancer surgery?</span><i class="fa-solid fa-chevron-down faq-chevron text-navy-300 text-sm"></i></button>
+                    <div class="faq-answer px-6 text-navy-600 text-sm leading-relaxed"><div class="pb-5">Minimally invasive techniques, including laparoscopic and robotic-assisted surgery, typically involve smaller incisions. Potential benefits may include reduced blood loss, shorter hospital stays, less post-operative pain, and quicker return to normal activities. Suitability depends on the type, location, and stage of cancer.</div></div>
+                </div>
+                <div class="faq-item bg-white rounded-xl border border-navy-100/50 overflow-hidden shadow-sm">
+                    <button class="faq-btn w-full text-left px-6 py-5 flex items-center justify-between font-bold text-navy-900 hover:text-teal-700 transition-colors" aria-expanded="false"><span>What is a Tumor Board and why is it important?</span><i class="fa-solid fa-chevron-down faq-chevron text-navy-300 text-sm"></i></button>
+                    <div class="faq-answer px-6 text-navy-600 text-sm leading-relaxed"><div class="pb-5">A Tumor Board is a conference where specialists from different areas — surgical oncology, medical oncology, radiation oncology, pathology, and radiology — review a patient's case together. This collaborative approach ensures treatment recommendations are comprehensive and incorporate multiple expert perspectives.</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         BOOK AN APPOINTMENT
+         ============================================================ -->
+    <section id="appointment" class="py-20 lg:py-28 bg-white" aria-label="Book an Appointment">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+                <div class="space-y-8 reveal-left">
+                    <div>
+                        <span class="text-teal-600 font-bold text-xs uppercase tracking-[0.2em]">Get in Touch</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 mt-3">Consultation &amp; Contact</h2>
+                        <div class="w-16 h-1 bg-gradient-to-r from-teal-500 to-gold-400 rounded-full mt-4"></div>
+                        <p class="text-navy-500 max-w-md mt-4 leading-relaxed">Get in touch for professional opinions, oncological consultations, or patient inquiries at AIG Hospitals.</p>
+                    </div>
+                    <div class="space-y-5">
+                        <a href="tel:+919949899526" class="flex items-center space-x-4 group">
+                            <div class="w-12 h-12 bg-teal-50 group-hover:bg-teal-100 rounded-xl flex items-center justify-center text-teal-600 transition-colors"><i class="fa-solid fa-phone"></i></div>
+                            <div><span class="block text-xs text-navy-400 uppercase font-bold tracking-wider">Phone</span><span class="font-medium text-navy-800 group-hover:text-teal-700 transition-colors">+91-9949899526</span></div>
+                        </a>
+                        <a href="mailto:kolagatlagayathri@gmail.com" class="flex items-center space-x-4 group">
+                            <div class="w-12 h-12 bg-gold-50 group-hover:bg-gold-100 rounded-xl flex items-center justify-center text-gold-600 transition-colors"><i class="fa-solid fa-envelope"></i></div>
+                            <div><span class="block text-xs text-navy-400 uppercase font-bold tracking-wider">Email</span><span class="font-medium text-navy-800 group-hover:text-teal-700 transition-colors">kolagatlagayathri@gmail.com</span></div>
+                        </a>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-coral-50 rounded-xl flex items-center justify-center text-coral-500"><i class="fa-solid fa-location-dot"></i></div>
+                            <div><span class="block text-xs text-navy-400 uppercase font-bold tracking-wider">Primary Practice</span><span class="font-medium text-navy-800">AIG Hospitals, Hyderabad, India</span></div>
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden border border-navy-100 shadow-sm h-48 bg-cream-100 flex items-center justify-center">
+                        <!-- TODO: Replace with Google Maps embed for AIG Hospitals, Hyderabad -->
+                        <div class="text-center text-navy-300"><i class="fa-solid fa-map-location-dot text-3xl mb-2"></i><p class="text-sm font-medium">Google Maps Embed Placeholder</p><p class="text-xs">AIG Hospitals, Hyderabad</p></div>
+                    </div>
+                </div>
+                <div class="reveal-right">
+                    <div class="bg-cream-50 p-8 sm:p-10 rounded-2xl shadow-lg border border-cream-200">
+                        <h3 class="text-2xl font-extrabold text-navy-900 mb-2">Book an Appointment</h3>
+                        <p class="text-sm text-navy-400 mb-6">Fill in the form below and we'll get back to you.</p>
+                        <!--
+                            FORM BACKEND — choose ONE:
+                            1. Formspree:  action="https://formspree.io/f/YOUR_FORM_ID" method="POST"
+                            2. EmailJS:    emailjs.sendForm('SERVICE_ID','TEMPLATE_ID', form, 'PUBLIC_KEY')
+                            3. Custom API: fetch('/api/contact', { method:'POST', body: JSON.stringify({...}) })
+                        -->
+                        <form id="appointment-form" onsubmit="handleFormSubmit(event)" novalidate class="space-y-5">
+                            <div><label for="form-name" class="block text-xs font-bold text-navy-600 uppercase mb-1.5 tracking-wider">Your Name <span class="text-coral-500">*</span></label><input type="text" id="form-name" name="name" required class="w-full px-4 py-3 rounded-xl border border-navy-200 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 focus:outline-none text-sm bg-white transition-all" placeholder="Full Name"><p class="error-msg" id="name-error">Please enter your name.</p></div>
+                            <div><label for="form-phone" class="block text-xs font-bold text-navy-600 uppercase mb-1.5 tracking-wider">Phone Number <span class="text-coral-500">*</span></label><input type="tel" id="form-phone" name="phone" required class="w-full px-4 py-3 rounded-xl border border-navy-200 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 focus:outline-none text-sm bg-white transition-all" placeholder="+91-XXXXX-XXXXX"><p class="error-msg" id="phone-error">Please enter a valid phone number.</p></div>
+                            <div><label for="form-email" class="block text-xs font-bold text-navy-600 uppercase mb-1.5 tracking-wider">Email Address</label><input type="email" id="form-email" name="email" class="w-full px-4 py-3 rounded-xl border border-navy-200 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 focus:outline-none text-sm bg-white transition-all" placeholder="you@example.com"><p class="error-msg" id="email-error">Please enter a valid email address.</p></div>
+                            <div><label for="form-message" class="block text-xs font-bold text-navy-600 uppercase mb-1.5 tracking-wider">Message / Inquiry</label><textarea id="form-message" name="message" rows="4" class="w-full px-4 py-3 rounded-xl border border-navy-200 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 focus:outline-none text-sm bg-white transition-all resize-none" placeholder="Briefly describe your concern or query..."></textarea></div>
+                            <button type="submit" class="w-full bg-gradient-to-r from-teal-600 to-teal-500 hover:from-teal-700 hover:to-teal-600 text-white font-bold py-3.5 rounded-xl transition-all shadow-md hover:shadow-lg text-sm"><i class="fa-solid fa-paper-plane mr-2"></i>Send Inquiry</button>
+                        </form>
+                        <div id="form-success" class="success-msg mt-6"><i class="fa-solid fa-circle-check text-3xl text-teal-500 mb-3"></i><h4 class="font-extrabold text-lg text-navy-900">Thank You!</h4><p class="text-sm text-navy-600 mt-1">Your inquiry has been sent. We'll reach out to you shortly.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer class="bg-navy-950 text-navy-300 py-16 border-t border-navy-800" role="contentinfo">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3.5">
+                        <svg class="w-10 h-10 flex-shrink-0" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <defs>
+                                <linearGradient id="gk-ribbon-f1" x1="6" y1="4" x2="42" y2="44" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#27ab83"/>
+                                    <stop offset="1" stop-color="#3ebd93"/>
+                                </linearGradient>
+                                <linearGradient id="gk-ribbon-f2" x1="42" y1="4" x2="6" y2="44" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#3ebd93"/>
+                                    <stop offset="1" stop-color="#f0b429"/>
+                                </linearGradient>
+                            </defs>
+                            <path d="M14 42 C20 34 35 22 35 15 C35 8.9 30.1 4 24 4 C17.9 4 13 8.9 13 15 C13 22 28 34 34 42" 
+                                  stroke="url(#gk-ribbon-f1)" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+                            <path d="M21 10 C22 9.4 23 9 24 9 C27.3 9 30 11.7 30 15 C30 20 22 27 16 34" 
+                                  stroke="url(#gk-ribbon-f2)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.9"/>
+                            <circle cx="24" cy="15" r="2.5" fill="#f0b429"/>
+                        </svg>
+                        <div class="flex flex-col">
+                            <span class="font-heading font-extrabold text-base text-white uppercase tracking-tight leading-none">DR. GAYATHRI KOLAGATLA</span>
+                            <span class="text-[9.5px] font-bold tracking-[0.16em] text-teal-400 uppercase mt-1">expertise • precision • care</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-navy-400 leading-relaxed">Consultant Surgical Oncologist at AIG Hospitals, Hyderabad. Specialized in precision oncological surgery, minimally invasive techniques, and multidisciplinary cancer care.</p>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="font-extrabold text-white text-base">Quick Links</h4>
+                    <nav class="space-y-2 text-sm" aria-label="Footer navigation">
+                        <a href="#about" class="block hover:text-teal-400 transition-colors">About Dr. Gayathri</a>
+                        <a href="#specialisations" class="block hover:text-teal-400 transition-colors">Specialisations</a>
+                        <a href="#experience" class="block hover:text-teal-400 transition-colors">Experience &amp; Affiliations</a>
+                        <a href="#stories" class="block hover:text-teal-400 transition-colors">Patient Stories</a>
+                        <a href="#faq" class="block hover:text-teal-400 transition-colors">FAQ</a>
+                        <a href="#appointment" class="block hover:text-teal-400 transition-colors">Book Appointment</a>
+                    </nav>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="font-extrabold text-white text-base">Contact</h4>
+                    <div class="space-y-2 text-sm">
+                        <a href="tel:+919949899526" class="block hover:text-teal-400 transition-colors"><i class="fa-solid fa-phone mr-2 text-xs"></i>+91-9949899526</a>
+                        <a href="mailto:kolagatlagayathri@gmail.com" class="block hover:text-teal-400 transition-colors"><i class="fa-solid fa-envelope mr-2 text-xs"></i>kolagatlagayathri@gmail.com</a>
+                        <p><i class="fa-solid fa-location-dot mr-2 text-xs"></i>AIG Hospitals, Hyderabad, India</p>
+                    </div>
+                    <div class="flex space-x-3 pt-2">
+                        <!-- TODO: Add real social media URLs -->
+                        <a href="#" class="w-9 h-9 rounded-lg bg-navy-800 hover:bg-teal-600 flex items-center justify-center text-navy-300 hover:text-white transition-all" aria-label="Facebook"><i class="fa-brands fa-facebook-f text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-navy-800 hover:bg-teal-600 flex items-center justify-center text-navy-300 hover:text-white transition-all" aria-label="Instagram"><i class="fa-brands fa-instagram text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-navy-800 hover:bg-teal-600 flex items-center justify-center text-navy-300 hover:text-white transition-all" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-navy-800 hover:bg-teal-600 flex items-center justify-center text-navy-300 hover:text-white transition-all" aria-label="YouTube"><i class="fa-brands fa-youtube text-sm"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-navy-800 mt-10 pt-8 text-center text-xs text-navy-500">
+                <p>&copy; 2026 Dr. Gayathri Kolagatla. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+         FLOATING BUTTONS
+         ============================================================ -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col space-y-3">
+        <a href="tel:+919949899526" class="float-btn bg-navy-800 text-white" aria-label="Call Dr. Gayathri"><i class="fa-solid fa-phone text-lg"></i></a>
+        <a href="https://wa.me/919949899526?text=Hello%20Dr.%20Gayathri%2C%20I%20would%20like%20to%20book%20a%20consultation." target="_blank" rel="noopener noreferrer" class="float-btn bg-green-500 text-white" aria-label="WhatsApp Dr. Gayathri"><i class="fa-brands fa-whatsapp text-2xl"></i></a>
+    </div>
+    <button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="fixed bottom-6 left-6 z-50 w-12 h-12 rounded-full bg-navy-800 hover:bg-teal-600 text-white shadow-lg flex items-center justify-center transition-all" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <!-- ============================================================
+         JAVASCRIPT
+         ============================================================ -->
+    <script>
+    (function() {
+        'use strict';
+
+        /* ==== 1. SCROLL PROGRESS ==== */
+        const progressBar = document.getElementById('scroll-progress');
+        function updateProgress() {
+            const h = document.documentElement.scrollHeight - window.innerHeight;
+            progressBar.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+        }
+
+        /* ==== 2. STICKY HEADER + ACTIVE NAV ==== */
+        const header = document.querySelector('.site-header');
+        const navLinks = document.querySelectorAll('.nav-link[data-section]');
+        const sections = document.querySelectorAll('section[id]');
+        function updateHeader() { header.classList.toggle('scrolled', window.scrollY > 50); }
+        function updateActiveNav() {
+            let cur = '';
+            sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) cur = s.id; });
+            navLinks.forEach(l => l.classList.toggle('active', l.dataset.section === cur));
+        }
+
+        /* ==== 3. BACK TO TOP ==== */
+        const btt = document.getElementById('back-to-top');
+        function updateBTT() { btt.classList.toggle('visible', window.scrollY > 500); }
+
+        let ticking = false;
+        window.addEventListener('scroll', function() {
+            if (!ticking) { requestAnimationFrame(function() { updateProgress(); updateHeader(); updateActiveNav(); updateBTT(); ticking = false; }); ticking = true; }
+        });
+
+        /* ==== 4. MOBILE MENU ==== */
+        const hBtn = document.getElementById('hamburger-btn'), cBtn = document.getElementById('close-menu-btn');
+        const mMenu = document.getElementById('mobile-menu'), mOvr = document.getElementById('mobile-overlay');
+        function openMenu() { mMenu.classList.add('open'); mOvr.classList.add('open'); mMenu.setAttribute('aria-hidden','false'); hBtn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+        function closeMenu() { mMenu.classList.remove('open'); mOvr.classList.remove('open'); mMenu.setAttribute('aria-hidden','true'); hBtn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+        hBtn.addEventListener('click', openMenu);
+        cBtn.addEventListener('click', closeMenu);
+        mOvr.addEventListener('click', closeMenu);
+        document.querySelectorAll('.mobile-nav-link').forEach(l => l.addEventListener('click', closeMenu));
+
+        /* ==== 5. SCROLL REVEAL ==== */
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!reducedMotion) {
+            const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }), { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+            document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => obs.observe(el));
+        } else {
+            document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => el.classList.add('visible'));
+        }
+
+        /* ==== 6. SPECIALISATION SLIDER ==== */
+        const specTrack = document.getElementById('spec-track');
+        const specSlides = specTrack.querySelectorAll('.spec-slide');
+        const specDotsC = document.getElementById('spec-dots');
+        const specTotal = specSlides.length;
+        let specIdx = 0, specAutoplay = null;
+
+        for (let i = 0; i < specTotal; i++) {
+            const d = document.createElement('button');
+            d.className = 'spec-dot' + (i === 0 ? ' active' : '');
+            d.setAttribute('aria-label', 'Go to specialisation ' + (i + 1));
+            d.addEventListener('click', function() { specGo(i); specReset(); });
+            specDotsC.appendChild(d);
+        }
+        function specGo(i) {
+            specIdx = i;
+            specTrack.scrollTo({ left: specTrack.clientWidth * i, behavior: 'smooth' });
+            specDotsC.querySelectorAll('.spec-dot').forEach((d, j) => d.classList.toggle('active', j === specIdx));
+        }
+        window.specNext = function() { specGo((specIdx + 1) % specTotal); specReset(); };
+        window.specPrev = function() { specGo((specIdx - 1 + specTotal) % specTotal); specReset(); };
+        function specStart() { specAutoplay = setInterval(() => specGo((specIdx + 1) % specTotal), 4500); }
+        function specReset() { clearInterval(specAutoplay); specStart(); }
+        specStart();
+
+        const specSlider = document.getElementById('spec-slider');
+        specSlider.addEventListener('mouseenter', () => clearInterval(specAutoplay));
+        specSlider.addEventListener('mouseleave', specStart);
+        
+        // Sync dots on manual scroll
+        specTrack.addEventListener('scroll', () => {
+            const idx = Math.round(specTrack.scrollLeft / specTrack.clientWidth);
+            if(idx !== specIdx && idx >= 0 && idx < specTotal) {
+                specIdx = idx;
+                specDotsC.querySelectorAll('.spec-dot').forEach((d, j) => d.classList.toggle('active', j === specIdx));
+            }
+        }, { passive: true });
+        
+        specSlider.addEventListener('keydown', e => { if (e.key === 'ArrowRight') specNext(); if (e.key === 'ArrowLeft') specPrev(); });
+
+        /* ==== 7. TESTIMONIAL CAROUSEL ==== */
+        /*
+         * TESTIMONIAL BUG FIX: The original code stored testimonials in a JS array
+         * and used three separate getElementById().innerText assignments to update
+         * text, author, and condition. This caused a mismatch bug because:
+         *   (a) The hardcoded HTML could drift from testimonials[0] if edited independently,
+         *   (b) if any single DOM update failed or was interrupted (e.g. by rapid clicks
+         *       triggering overlapping calls), a stale value from the previous slide
+         *       could remain visible paired with new values from the current slide.
+         * The fix: all slides are pre-rendered as complete DOM nodes in a CSS flex
+         * track. Transitioning between slides is a single translateX operation —
+         * text, author, and condition are part of the same DOM subtree and can never
+         * desynchronize. No partial updates, no race conditions.
+         */
+        const testiTrack = document.getElementById('testi-track');
+        const testiSlides = testiTrack.querySelectorAll('.testi-slide');
+        const testiDotsC = document.getElementById('testi-dots');
+        const testiTotal = testiSlides.length;
+        let testiIdx = 0, testiAutoplay = null;
+
+        for (let i = 0; i < testiTotal; i++) {
+            const d = document.createElement('button');
+            d.className = 'testi-dot' + (i === 0 ? ' active' : '');
+            d.setAttribute('aria-label', 'Go to testimonial ' + (i + 1));
+            d.addEventListener('click', function() { testiGo(i); testiReset(); });
+            testiDotsC.appendChild(d);
+        }
+        function testiGo(i) {
+            testiIdx = i;
+            testiTrack.scrollTo({ left: testiTrack.clientWidth * i, behavior: 'smooth' });
+            testiDotsC.querySelectorAll('.testi-dot').forEach((d, j) => d.classList.toggle('active', j === testiIdx));
+        }
+        window.testiNext = function() { testiGo((testiIdx + 1) % testiTotal); testiReset(); };
+        window.testiPrev = function() { testiGo((testiIdx - 1 + testiTotal) % testiTotal); testiReset(); };
+        function testiStart() { testiAutoplay = setInterval(() => testiGo((testiIdx + 1) % testiTotal), 5000); }
+        function testiReset() { clearInterval(testiAutoplay); testiStart(); }
+        testiStart();
+
+        const testiC = document.getElementById('testi-container');
+        testiC.addEventListener('mouseenter', () => clearInterval(testiAutoplay));
+        testiC.addEventListener('mouseleave', testiStart);
+        
+        // Sync dots on manual scroll
+        testiTrack.addEventListener('scroll', () => {
+            const idx = Math.round(testiTrack.scrollLeft / testiTrack.clientWidth);
+            if(idx !== testiIdx && idx >= 0 && idx < testiTotal) {
+                testiIdx = idx;
+                testiDotsC.querySelectorAll('.testi-dot').forEach((d, j) => d.classList.toggle('active', j === testiIdx));
+            }
+        }, { passive: true });
+        
+        testiC.addEventListener('keydown', e => { if (e.key === 'ArrowRight') testiNext(); if (e.key === 'ArrowLeft') testiPrev(); });
+
+        /* ==== 8. FAQ ACCORDION ==== */
+        document.querySelectorAll('.faq-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const ans = this.nextElementSibling, chev = this.querySelector('.faq-chevron'), isOpen = ans.classList.contains('open');
+                document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+                document.querySelectorAll('.faq-chevron').forEach(c => c.classList.remove('open'));
+                document.querySelectorAll('.faq-btn').forEach(b => b.setAttribute('aria-expanded','false'));
+                if (!isOpen) { ans.classList.add('open'); chev.classList.add('open'); this.setAttribute('aria-expanded','true'); }
+            });
+        });
+
+        /* ==== 9. BIO TOGGLE ==== */
+        window.toggleBio = function() {
+            const ex = document.getElementById('bio-extra'), txt = document.getElementById('bio-toggle-text'), ico = document.getElementById('bio-toggle-icon');
+            const isOpen = ex.classList.contains('open');
+            ex.classList.toggle('open');
+            txt.textContent = isOpen ? 'Read More' : 'Read Less';
+            ico.className = isOpen ? 'fa-solid fa-arrow-down text-xs transition-transform group-hover:translate-y-0.5' : 'fa-solid fa-arrow-up text-xs transition-transform group-hover:-translate-y-0.5';
+        };
+
+        /* ==== 10. FORM VALIDATION ==== */
+        window.handleFormSubmit = function(e) {
+            e.preventDefault();
+            let valid = true;
+            const name = document.getElementById('form-name'), phone = document.getElementById('form-phone'), email = document.getElementById('form-email');
+            [name,phone,email].forEach(el => el.classList.remove('field-error'));
+            document.querySelectorAll('.error-msg').forEach(m => m.classList.remove('show'));
+            if (!name.value.trim()) { name.classList.add('field-error'); document.getElementById('name-error').classList.add('show'); valid = false; }
+            if (!/^[\+]?[\d\s\-]{7,15}$/.test(phone.value.trim())) { phone.classList.add('field-error'); document.getElementById('phone-error').classList.add('show'); valid = false; }
+            if (email.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) { email.classList.add('field-error'); document.getElementById('email-error').classList.add('show'); valid = false; }
+            if (!valid) return;
+            // --- BACKEND INTEGRATION POINT --- see HTML comment above the form for Formspree / EmailJS / custom API options
+            document.getElementById('appointment-form').style.display = 'none';
+            document.getElementById('form-success').classList.add('show');
+        };
+
+    })();
+    </script>
+</body>
+</html>
