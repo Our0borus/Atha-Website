@@ -17,11 +17,15 @@
             theme: {
                 extend: {
                     colors: {
-                        navy:  { 50:'#f0f4f8', 100:'#d9e2ec', 200:'#bcccdc', 300:'#9fb3c8', 400:'#829ab1', 500:'#627d98', 600:'#486581', 700:'#334e68', 800:'#243b53', 900:'#102a43', 950:'#0a1929' },
-                        teal:  { 50:'#effcf6', 100:'#c6f7e2', 200:'#8eedc7', 300:'#65d6ad', 400:'#3ebd93', 500:'#27ab83', 600:'#199473', 700:'#147d64', 800:'#0c6b58', 900:'#014d40' },
-                        coral: { 50:'#fff5f5', 100:'#ffe3e3', 200:'#ffbdbd', 300:'#ff9b9b', 400:'#f86a6a', 500:'#ef4e4e', 600:'#e12d39', 700:'#cf1124', 800:'#ab091e', 900:'#8a041a' },
-                        gold:  { 50:'#fffbea', 100:'#fff3c4', 200:'#fce588', 300:'#fadb5f', 400:'#f7c948', 500:'#f0b429', 600:'#de911d', 700:'#cb6e17', 800:'#b44d12', 900:'#8d2b0b' },
-                        cream: { 50:'#fdfcfa', 100:'#faf7f2', 200:'#f5f0e8' },
+                        navy:  { 50:'#f0f4f8', 100:'#d9e2ec', 200:'#bcccdc', 300:'#9fb3c8', 400:'#829ab1', 500:'#627d98', 600:'#486581', 700:'#334e68', 800:'#1e293b', 900:'#0f172a', 950:'#070d1e' },
+                        blue:  { 50:'#eff6ff', 100:'#dbeafe', 200:'#bfdbfe', 300:'#93c5fd', 400:'#60a5fa', 500:'#3b82f6', 600:'#2563eb', 700:'#1d4ed8', 800:'#1e40af', 900:'#1e3a8a' },
+                        cyan:  { 50:'#ecfeff', 100:'#cffafe', 200:'#a5f3fc', 300:'#67e8f9', 400:'#22d3ee', 500:'#06b6d4', 600:'#0891b2', 700:'#0e7490', 800:'#155e75', 900:'#164e63' },
+                        teal:  { 50:'#f0fdfa', 100:'#ccfbf1', 200:'#99f6e4', 300:'#5eead4', 400:'#2dd4bf', 500:'#14b8a6', 600:'#0d9488', 700:'#0f766e', 800:'#115e59', 900:'#134e4a' },
+                        rose:  { 50:'#fff1f2', 100:'#ffe4e6', 200:'#fecdd3', 300:'#fda4af', 400:'#fb7185', 500:'#f43f5e', 600:'#e11d48', 700:'#be123c', 800:'#9f1239', 900:'#881337' },
+                        amber: { 50:'#fffbeb', 100:'#fef3c7', 200:'#fde68a', 300:'#fcd34d', 400:'#fbbf24', 500:'#f59e0b', 600:'#d97706', 700:'#b45309', 800:'#92400e', 900:'#78350f' },
+                        purple:{ 50:'#faf5ff', 100:'#f3e8ff', 200:'#e9d5ff', 300:'#d8b4fe', 400:'#c084fc', 500:'#a855f7', 600:'#9333ea', 700:'#7e22ce', 800:'#6b21a8', 900:'#581c87' },
+                        indigo:{ 50:'#eef2ff', 100:'#e0e7ff', 200:'#c7d2fe', 300:'#a5b4fc', 400:'#818cf8', 500:'#6366f1', 600:'#4f46e5', 700:'#4338ca', 800:'#3730a3', 900:'#312e81' },
+                        slate: { 50:'#f8fafc', 100:'#f1f5f9', 200:'#e2e8f0', 300:'#cbd5e1', 400:'#94a3b8', 500:'#64748b', 600:'#475569', 700:'#334155', 800:'#1e293b', 900:'#0f172a' },
                     },
                     fontFamily: {
                         heading: ['"Nunito"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
@@ -34,10 +38,8 @@
 
     <style>
         :root {
-            --color-navy:       #102a43;
-            --color-teal:       #27ab83;
-            --color-gold:       #f0b429;
-            --color-cream:      #faf7f2;
+            --color-navy:       #0f172a;
+            --color-primary:    #2563eb;
             --font-primary:     'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
@@ -49,7 +51,7 @@
         .nav-link { position: relative; }
         .nav-link::after {
             content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
-            background: var(--color-teal); border-radius: 2px; transition: width 0.3s ease;
+            background: #2563eb; border-radius: 2px; transition: width 0.3s ease;
         }
         .nav-link:hover::after, .nav-link.active::after { width: 100%; }
 
@@ -68,31 +70,46 @@
         .float-btn:hover { transform: scale(1.1); box-shadow: 0 6px 25px rgba(0,0,0,.3); }
 
         .hero-spec-bg {
-            background: linear-gradient(135deg, #0a1929 0%, #102a43 50%, #147d64 100%);
+            background: linear-gradient(135deg, #070d1e 0%, #0f172a 45%, #1e3a8a 100%);
             position: relative; overflow: hidden;
         }
         .hero-spec-bg::before {
             content: ''; position: absolute; top: -50%; right: -20%;
             width: 600px; height: 600px; border-radius: 50%;
-            background: radial-gradient(circle, rgba(39,171,131,0.15) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(14,165,233,0.18) 0%, transparent 70%);
         }
 
         .img-placeholder-card {
-            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 50%, #bcccdc 100%);
-            border: 2px dashed #9fb3c8;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 60%, #f1f5f9 100%);
+            border: 2px dashed #cbd5e1;
             transition: all 0.3s ease;
         }
         .img-placeholder-card:hover {
-            border-color: #27ab83;
-            box-shadow: 0 10px 25px -5px rgba(39, 171, 131, 0.15);
+            border-color: #2563eb;
+            box-shadow: 0 12px 30px -5px rgba(37, 99, 235, 0.12);
         }
     </style>
 </head>
 
-<body class="bg-cream-50 text-navy-900 font-body antialiased min-h-screen flex flex-col justify-between">
+<body class="bg-slate-50 text-slate-800 font-body antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- TOP ANNOUNCEMENT BAR (inspired by modern medical portals) -->
+    <div class="bg-navy-900 text-white text-xs py-2 px-4 border-b border-navy-800 hidden sm:block">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-6 text-slate-300">
+                <span class="flex items-center"><i class="fa-solid fa-hospital text-blue-400 mr-2"></i>AIG Hospitals, Gachibowli, Hyderabad</span>
+                <span class="flex items-center"><i class="fa-regular fa-clock text-amber-400 mr-2"></i>Mon - Sat: 9:00 AM - 5:00 PM</span>
+            </div>
+            <div class="flex items-center space-x-5 text-slate-300">
+                <a href="tel:+916309029080" class="hover:text-blue-300 transition-colors flex items-center font-medium"><i class="fa-solid fa-phone text-blue-400 mr-1.5"></i>+91-6309029080</a>
+                <span class="text-slate-600">|</span>
+                <a href="mailto:gayathrireddykolagatla@gmail.com" class="hover:text-blue-300 transition-colors flex items-center"><i class="fa-solid fa-envelope text-blue-400 mr-1.5"></i>gayathrireddykolagatla@gmail.com</a>
+            </div>
+        </div>
+    </div>
 
     <!-- HEADER -->
-    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-navy-100/50" role="banner">
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200" role="banner">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="h-[76px] flex items-center justify-between">
                 <!-- Brand / Logo -->
@@ -100,43 +117,43 @@
                     <svg class="w-10 h-10 flex-shrink-0 transition-transform group-hover:scale-105" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <defs>
                             <linearGradient id="s-gk-ribbon-1" x1="6" y1="4" x2="42" y2="44" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#102a43"/>
-                                <stop offset="0.6" stop-color="#147d64"/>
-                                <stop offset="1" stop-color="#27ab83"/>
+                                <stop stop-color="#0f172a"/>
+                                <stop offset="0.5" stop-color="#1e3a8a"/>
+                                <stop offset="1" stop-color="#2563eb"/>
                             </linearGradient>
                             <linearGradient id="s-gk-ribbon-2" x1="42" y1="4" x2="6" y2="44" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="#27ab83"/>
-                                <stop offset="0.7" stop-color="#3ebd93"/>
-                                <stop offset="1" stop-color="#f0b429"/>
+                                <stop stop-color="#2563eb"/>
+                                <stop offset="0.7" stop-color="#0284c7"/>
+                                <stop offset="1" stop-color="#f59e0b"/>
                             </linearGradient>
                         </defs>
                         <path d="M14 42 C20 34 35 22 35 15 C35 8.9 30.1 4 24 4 C17.9 4 13 8.9 13 15 C13 22 28 34 34 42" stroke="url(#s-gk-ribbon-1)" stroke-width="4.5" stroke-linecap="round" fill="none"/>
                         <path d="M21 10 C22 9.4 23 9 24 9 C27.3 9 30 11.7 30 15 C30 20 22 27 16 34" stroke="url(#s-gk-ribbon-2)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.9"/>
-                        <circle cx="24" cy="15" r="2.5" fill="#f0b429"/>
+                        <circle cx="24" cy="15" r="2.5" fill="#f59e0b"/>
                     </svg>
                     <div class="flex flex-col">
-                        <span class="font-heading font-extrabold text-[1rem] sm:text-[1.12rem] text-navy-900 tracking-tight leading-none group-hover:text-teal-700 transition-colors uppercase whitespace-nowrap">DR. GAYATHRI KOLAGATLA</span>
-                        <span class="text-[9px] sm:text-[10px] font-bold tracking-[0.14em] text-teal-600 uppercase mt-1 whitespace-nowrap">precision • excellence • compassion</span>
+                        <span class="font-heading font-extrabold text-[1rem] sm:text-[1.12rem] text-navy-900 tracking-tight leading-none group-hover:text-blue-600 transition-colors uppercase whitespace-nowrap">DR. GAYATHRI KOLAGATLA</span>
+                        <span class="text-[9px] sm:text-[10px] font-bold tracking-[0.14em] text-blue-600 uppercase mt-1 whitespace-nowrap">precision • excellence • compassion</span>
                     </div>
                 </a>
 
                 <!-- Desktop Nav -->
-                <nav class="hidden lg:flex items-center space-x-3.5 xl:space-x-5 font-medium text-xs xl:text-sm text-navy-600 ml-auto mr-4 lg:mr-6" aria-label="Primary navigation">
-                    <a href="index.html#about" class="nav-link hover:text-teal-600 transition-colors py-2 whitespace-nowrap">About</a>
-                    <a href="specialisations.html" class="nav-link active text-teal-700 font-bold py-2 whitespace-nowrap">Specialisations</a>
-                    <a href="index.html#experience" class="nav-link hover:text-teal-600 transition-colors py-2 whitespace-nowrap">Experience</a>
-                    <a href="index.html#education" class="nav-link hover:text-teal-600 transition-colors py-2 whitespace-nowrap">Education</a>
-                    <a href="honours.html" class="nav-link hover:text-teal-600 transition-colors py-2 whitespace-nowrap">Honours &amp; Awards</a>
-                    <a href="index.html#stories" class="nav-link hover:text-teal-600 transition-colors py-2 whitespace-nowrap">Patient Stories</a>
-                    <a href="index.html#faq" class="nav-link hover:text-teal-600 transition-colors py-2 whitespace-nowrap">FAQ</a>
+                <nav class="hidden lg:flex items-center space-x-3.5 xl:space-x-5 font-medium text-xs xl:text-sm text-slate-600 ml-auto mr-4 lg:mr-6" aria-label="Primary navigation">
+                    <a href="index.html#about" class="nav-link hover:text-blue-600 transition-colors py-2 whitespace-nowrap">About</a>
+                    <a href="specialisations.html" class="nav-link active text-blue-600 font-bold py-2 whitespace-nowrap">Specialisations</a>
+                    <a href="index.html#experience" class="nav-link hover:text-blue-600 transition-colors py-2 whitespace-nowrap">Experience</a>
+                    <a href="index.html#education" class="nav-link hover:text-blue-600 transition-colors py-2 whitespace-nowrap">Education</a>
+                    <a href="honours.html" class="nav-link hover:text-blue-600 transition-colors py-2 whitespace-nowrap">Honours &amp; Awards</a>
+                    <a href="index.html#stories" class="nav-link hover:text-blue-600 transition-colors py-2 whitespace-nowrap">Patient Stories</a>
+                    <a href="index.html#faq" class="nav-link hover:text-blue-600 transition-colors py-2 whitespace-nowrap">FAQ</a>
                 </nav>
 
                 <div class="flex items-center space-x-4 flex-shrink-0">
-                    <a href="index.html#appointment" class="hidden md:inline-flex items-center bg-gradient-to-r from-teal-600 to-teal-500 hover:from-teal-700 hover:to-teal-600 text-white px-5 py-2.5 rounded-xl text-sm font-bold shadow-md hover:shadow-lg transition-all">
+                    <a href="index.html#appointment" class="hidden md:inline-flex items-center bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-5 py-2.5 rounded-xl text-sm font-bold shadow-md hover:shadow-lg transition-all">
                         <i class="fa-regular fa-calendar-check mr-2"></i>Book Appointment
                     </a>
-                    <button id="hamburger-btn" class="lg:hidden p-2 rounded-lg hover:bg-navy-50 transition-colors" aria-label="Open menu">
-                        <i class="fa-solid fa-bars text-navy-700 text-xl"></i>
+                    <button id="hamburger-btn" class="lg:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors" aria-label="Open menu">
+                        <i class="fa-solid fa-bars text-slate-700 text-xl"></i>
                     </button>
                 </div>
             </div>
@@ -146,407 +163,377 @@
     <!-- Mobile Drawer -->
     <div id="mobile-overlay" class="mobile-overlay fixed inset-0 z-[60] bg-navy-950/50 backdrop-blur-sm"></div>
     <nav id="mobile-menu" class="mobile-drawer fixed top-0 right-0 z-[70] w-80 max-w-[85vw] h-full bg-white shadow-2xl" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
-        <div class="flex items-center justify-between p-6 border-b border-navy-100">
+        <div class="flex items-center justify-between p-6 border-b border-slate-200">
             <span class="font-heading font-extrabold text-lg text-navy-900">Menu</span>
-            <button id="close-menu-btn" class="p-2 rounded-lg hover:bg-navy-50 transition-colors" aria-label="Close menu">
-                <i class="fa-solid fa-xmark text-navy-700 text-xl"></i>
+            <button id="close-menu-btn" class="p-2 rounded-lg hover:bg-slate-100 transition-colors" aria-label="Close menu">
+                <i class="fa-solid fa-xmark text-slate-700 text-xl"></i>
             </button>
         </div>
         <div class="p-6 space-y-2">
-            <a href="index.html#about" class="block py-3 px-4 rounded-lg text-navy-700 font-medium hover:bg-teal-50 hover:text-teal-700 transition-colors">About</a>
-            <a href="specialisations.html" class="block py-3 px-4 rounded-lg text-teal-700 bg-teal-50 font-bold">Specialisations</a>
-            <a href="index.html#experience" class="block py-3 px-4 rounded-lg text-navy-700 font-medium hover:bg-teal-50 hover:text-teal-700 transition-colors">Experience</a>
-            <a href="index.html#education" class="block py-3 px-4 rounded-lg text-navy-700 font-medium hover:bg-teal-50 hover:text-teal-700 transition-colors">Education</a>
-            <a href="honours.html" class="block py-3 px-4 rounded-lg text-navy-700 font-medium hover:bg-teal-50 hover:text-teal-700 transition-colors">Honours &amp; Awards</a>
-            <a href="index.html#stories" class="block py-3 px-4 rounded-lg text-navy-700 font-medium hover:bg-teal-50 hover:text-teal-700 transition-colors">Patient Stories</a>
-            <a href="index.html#faq" class="block py-3 px-4 rounded-lg text-navy-700 font-medium hover:bg-teal-50 hover:text-teal-700 transition-colors">FAQ</a>
-            <a href="index.html#appointment" class="block mt-4 text-center bg-gradient-to-r from-teal-600 to-teal-500 text-white py-3 px-6 rounded-xl font-bold shadow-md">
+            <a href="index.html#about" class="block py-3 px-4 rounded-lg text-slate-700 font-medium hover:bg-blue-50 hover:text-blue-700 transition-colors">About</a>
+            <a href="specialisations.html" class="block py-3 px-4 rounded-lg text-blue-700 bg-blue-50 font-bold">Specialisations</a>
+            <a href="index.html#experience" class="block py-3 px-4 rounded-lg text-slate-700 font-medium hover:bg-blue-50 hover:text-blue-700 transition-colors">Experience</a>
+            <a href="index.html#education" class="block py-3 px-4 rounded-lg text-slate-700 font-medium hover:bg-blue-50 hover:text-blue-700 transition-colors">Education</a>
+            <a href="honours.html" class="block py-3 px-4 rounded-lg text-slate-700 font-medium hover:bg-blue-50 hover:text-blue-700 transition-colors">Honours &amp; Awards</a>
+            <a href="index.html#stories" class="block py-3 px-4 rounded-lg text-slate-700 font-medium hover:bg-blue-50 hover:text-blue-700 transition-colors">Patient Stories</a>
+            <a href="index.html#faq" class="block py-3 px-4 rounded-lg text-slate-700 font-medium hover:bg-blue-50 hover:text-blue-700 transition-colors">FAQ</a>
+            <a href="index.html#appointment" class="block mt-4 text-center bg-gradient-to-r from-blue-600 to-cyan-600 text-white py-3 px-6 rounded-xl font-bold shadow-md">
                 <i class="fa-regular fa-calendar-check mr-2"></i>Book Appointment
             </a>
         </div>
-        <div class="absolute bottom-0 left-0 right-0 p-6 border-t border-navy-100 text-sm text-navy-500 space-y-2">
-            <a href="tel:+916309029080" class="flex items-center space-x-2 hover:text-teal-600"><i class="fa-solid fa-phone text-xs"></i><span>+91-6309029080</span></a>
-            <a href="mailto:gayathrireddykolagatla@gmail.com" class="flex items-center space-x-2 hover:text-teal-600"><i class="fa-solid fa-envelope text-xs"></i><span>gayathrireddykolagatla@gmail.com</span></a>
+        <div class="absolute bottom-0 left-0 right-0 p-6 border-t border-slate-200 text-sm text-slate-500 space-y-2">
+            <a href="tel:+916309029080" class="flex items-center space-x-2 hover:text-blue-600"><i class="fa-solid fa-phone text-xs"></i><span>+91-6309029080</span></a>
+            <a href="mailto:gayathrireddykolagatla@gmail.com" class="flex items-center space-x-2 hover:text-blue-600"><i class="fa-solid fa-envelope text-xs"></i><span>gayathrireddykolagatla@gmail.com</span></a>
         </div>
     </nav>
 
     <!-- HERO BANNER -->
     <section class="hero-spec-bg text-white py-16 sm:py-24 relative">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-            <span class="inline-flex items-center bg-white/10 backdrop-blur-sm text-teal-200 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider border border-white/15">
-                <i class="fa-solid fa-stethoscope mr-2 text-teal-300"></i> Surgical Oncology Domains
+            <span class="inline-flex items-center bg-white/10 backdrop-blur-sm text-cyan-200 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider border border-white/15">
+                <i class="fa-solid fa-stethoscope mr-2 text-cyan-300"></i> Surgical Oncology Domains
             </span>
             <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight">Areas of Specialisation</h1>
-            <p class="text-navy-200 max-w-3xl mx-auto text-base sm:text-lg font-medium leading-relaxed">
+            <p class="text-slate-300 max-w-3xl mx-auto text-base sm:text-lg font-medium leading-relaxed">
                 Comprehensive surgical oncology management and evidence-based treatments across specialized solid tumor domains, with an emphasis on organ preservation, robotic precision, and patient quality of life.
             </p>
         </div>
     </section>
 
     <!-- QUICK CATEGORY JUMP PILLS -->
-    <nav class="bg-white border-b border-navy-100 sticky top-[76px] z-40 shadow-xs hidden md:block" aria-label="Specialisations navigation">
+    <nav class="bg-white border-b border-slate-200 sticky top-[76px] z-40 shadow-sm hidden md:block" aria-label="Specialisations navigation">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 overflow-x-auto">
-            <div class="flex items-center space-x-3 text-xs font-bold text-navy-600 whitespace-nowrap">
-                <span class="text-teal-700 font-extrabold uppercase mr-1"><i class="fa-solid fa-arrow-down mr-1"></i> Jump To:</span>
-                <a href="#breast" class="px-3 py-1.5 rounded-lg bg-navy-50 hover:bg-teal-50 hover:text-teal-700 transition-colors">Breast Cancer</a>
-                <a href="#head-neck" class="px-3 py-1.5 rounded-lg bg-navy-50 hover:bg-teal-50 hover:text-teal-700 transition-colors">Head, Neck &amp; Thyroid</a>
-                <a href="#gynaecology" class="px-3 py-1.5 rounded-lg bg-navy-50 hover:bg-teal-50 hover:text-teal-700 transition-colors">Gynecological Oncology</a>
-                <a href="#sarcoma" class="px-3 py-1.5 rounded-lg bg-navy-50 hover:bg-teal-50 hover:text-teal-700 transition-colors">Sarcomas</a>
-                <a href="#robotic" class="px-3 py-1.5 rounded-lg bg-navy-50 hover:bg-teal-50 hover:text-teal-700 transition-colors">Robotic &amp; Laparoscopic</a>
-                <a href="#organ-preservation" class="px-3 py-1.5 rounded-lg bg-navy-50 hover:bg-teal-50 hover:text-teal-700 transition-colors">Organ Preservation</a>
-                <a href="#gi-oncology" class="px-3 py-1.5 rounded-lg bg-navy-50 hover:bg-teal-50 hover:text-teal-700 transition-colors">Gastrointestinal</a>
-                <a href="#tumor-board" class="px-3 py-1.5 rounded-lg bg-navy-50 hover:bg-teal-50 hover:text-teal-700 transition-colors">Tumor Board</a>
+            <div class="flex items-center space-x-2.5 text-xs font-bold text-slate-600 whitespace-nowrap">
+                <span class="text-blue-600 font-extrabold uppercase mr-1"><i class="fa-solid fa-arrow-down mr-1"></i> Jump To:</span>
+                <a href="#breast" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-rose-50 hover:text-rose-600 transition-colors">Breast Cancer</a>
+                <a href="#head-neck" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-amber-50 hover:text-amber-700 transition-colors">Head, Neck &amp; Thyroid</a>
+                <a href="#gynaecology" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-purple-50 hover:text-purple-600 transition-colors">Gynecological Oncology</a>
+                <a href="#sarcoma" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-blue-50 hover:text-blue-600 transition-colors">Sarcomas</a>
+                <a href="#robotic" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-cyan-50 hover:text-cyan-700 transition-colors">Robotic &amp; Laparoscopic</a>
+                <a href="#organ-preservation" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-indigo-50 hover:text-indigo-600 transition-colors">Organ Preservation</a>
+                <a href="#gi-oncology" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-amber-50 hover:text-amber-700 transition-colors">Gastrointestinal</a>
+                <a href="#tumor-board" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 hover:text-slate-900 transition-colors">Tumor Board</a>
             </div>
         </div>
     </nav>
 
     <!-- MAIN CONTENT CONTAINER -->
-    <main class="py-16 sm:py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24 flex-grow">
+    <main class="py-16 sm:py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 flex-grow">
 
         <!-- 1. BREAST SURGICAL ONCOLOGY -->
-        <section id="breast" class="scroll-mt-36">
+        <section id="breast" class="scroll-mt-36 bg-white p-8 sm:p-12 rounded-3xl border border-slate-200 shadow-sm">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
                 <div class="lg:col-span-7 space-y-5">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-teal-50 text-teal-700 text-xs font-extrabold uppercase tracking-wider border border-teal-200">
-                        <i class="fa-solid fa-ribbon text-teal-600"></i> Domain 01
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-rose-50 text-rose-700 text-xs font-extrabold uppercase tracking-wider border border-rose-200">
+                        <i class="fa-solid fa-ribbon text-rose-500"></i> Domain 01
                     </div>
                     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy-900">
                         Breast Surgical Oncology &amp; Oncoplasty
                     </h2>
-                    <p class="text-navy-600 leading-relaxed text-sm sm:text-base">
+                    <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
                         Specialized surgical treatment for benign and malignant breast conditions. Treatments focus on oncological clearance while maximizing cosmetic outcome and patient self-confidence through oncoplastic remodeling.
                     </p>
                     
                     <div class="space-y-3 pt-2">
-                        <h3 class="text-xs font-extrabold uppercase tracking-wider text-navy-500">Key Surgical Procedures &amp; Interventions:</h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm font-semibold text-navy-700">
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-teal-500 text-xs"></i><span>Breast Conservation Surgery (BCS)</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-teal-500 text-xs"></i><span>Oncoplastic Reconstruction &amp; Remodeling</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-teal-500 text-xs"></i><span>Modified Radical Mastectomy (MRM)</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-teal-500 text-xs"></i><span>Sentinel Lymph Node Biopsy (SLNB)</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-teal-500 text-xs"></i><span>Axillary Lymph Node Dissection</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-teal-500 text-xs"></i><span>Triple-Negative &amp; HER2+ Care</span></div>
+                        <h3 class="text-xs font-extrabold uppercase tracking-wider text-slate-500">Key Surgical Procedures &amp; Interventions:</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm font-semibold text-slate-700">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-rose-500 text-xs"></i><span>Breast Conservation Surgery (BCS)</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-rose-500 text-xs"></i><span>Oncoplastic Reconstruction &amp; Remodeling</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-rose-500 text-xs"></i><span>Modified Radical Mastectomy (MRM)</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-rose-500 text-xs"></i><span>Sentinel Lymph Node Biopsy (SLNB)</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-rose-500 text-xs"></i><span>Axillary Lymph Node Dissection</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-rose-500 text-xs"></i><span>Triple-Negative &amp; HER2+ Care</span></div>
                         </div>
                     </div>
                 </div>
 
                 <div class="lg:col-span-5">
-                    <!-- Image Placeholder for Breast Cancer -->
-                    <!-- TODO: Replace placeholder below with your photo: <img src="images/breast-oncology.jpg" alt="Breast Surgical Oncology" class="w-full h-80 object-cover rounded-2xl shadow-md"> -->
-                    <div class="img-placeholder-card rounded-2xl p-8 aspect-[4/3] flex flex-col items-center justify-center text-center shadow-sm relative overflow-hidden group">
-                        <div class="w-20 h-20 rounded-2xl bg-white shadow-md flex items-center justify-center text-teal-600 text-3xl mb-4 group-hover:scale-110 transition-transform">
+                    <div class="img-placeholder-card rounded-2xl p-8 aspect-[4/3] flex flex-col items-center justify-center text-center shadow-xs relative overflow-hidden group">
+                        <div class="w-20 h-20 rounded-2xl bg-rose-50 border border-rose-100 shadow-sm flex items-center justify-center text-rose-600 text-3xl mb-4 group-hover:scale-110 transition-transform">
                             <i class="fa-solid fa-ribbon"></i>
                         </div>
-                        <span class="inline-block bg-teal-100 text-teal-800 text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider mb-2">Photo Placeholder</span>
+                        <span class="inline-block bg-rose-100 text-rose-800 text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider mb-2">Photo Placeholder</span>
                         <h4 class="font-extrabold text-navy-900 text-base">Breast Oncology Image</h4>
-                        <p class="text-xs text-navy-500 mt-1 max-w-xs">Ready for doctor / clinical picture<br><span class="text-[10px] text-navy-400 font-mono">(Recommended: 1200 x 900 px)</span></p>
+                        <p class="text-xs text-slate-500 mt-1 max-w-xs">Ready for doctor / clinical picture<br><span class="text-[10px] text-slate-400 font-mono">(Recommended: 1200 x 900 px)</span></p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <hr class="border-navy-100">
-
         <!-- 2. HEAD & NECK SURGERY & THYROID CANCERS -->
-        <section id="head-neck" class="scroll-mt-36">
+        <section id="head-neck" class="scroll-mt-36 bg-white p-8 sm:p-12 rounded-3xl border border-slate-200 shadow-sm">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
                 <div class="lg:col-span-5 order-2 lg:order-1">
-                    <!-- Image Placeholder for Head & Neck / Thyroid -->
-                    <!-- TODO: Replace placeholder below with your photo: <img src="images/head-neck-oncology.jpg" alt="Head & Neck Surgical Oncology" class="w-full h-80 object-cover rounded-2xl shadow-md"> -->
-                    <div class="img-placeholder-card rounded-2xl p-8 aspect-[4/3] flex flex-col items-center justify-center text-center shadow-sm relative overflow-hidden group">
-                        <div class="w-20 h-20 rounded-2xl bg-white shadow-md flex items-center justify-center text-gold-600 text-3xl mb-4 group-hover:scale-110 transition-transform">
+                    <div class="img-placeholder-card rounded-2xl p-8 aspect-[4/3] flex flex-col items-center justify-center text-center shadow-xs relative overflow-hidden group">
+                        <div class="w-20 h-20 rounded-2xl bg-amber-50 border border-amber-100 shadow-sm flex items-center justify-center text-amber-600 text-3xl mb-4 group-hover:scale-110 transition-transform">
                             <i class="fa-solid fa-head-side-cough"></i>
                         </div>
-                        <span class="inline-block bg-gold-100 text-gold-800 text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider mb-2">Photo Placeholder</span>
+                        <span class="inline-block bg-amber-100 text-amber-800 text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider mb-2">Photo Placeholder</span>
                         <h4 class="font-extrabold text-navy-900 text-base">Head, Neck &amp; Thyroid Image</h4>
-                        <p class="text-xs text-navy-500 mt-1 max-w-xs">Ready for clinical / surgical picture<br><span class="text-[10px] text-navy-400 font-mono">(Recommended: 1200 x 900 px)</span></p>
+                        <p class="text-xs text-slate-500 mt-1 max-w-xs">Ready for clinical / surgical picture<br><span class="text-[10px] text-slate-400 font-mono">(Recommended: 1200 x 900 px)</span></p>
                     </div>
                 </div>
 
                 <div class="lg:col-span-7 space-y-5 order-1 lg:order-2">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gold-50 text-gold-700 text-xs font-extrabold uppercase tracking-wider border border-gold-200">
-                        <i class="fa-solid fa-head-side-cough text-gold-600"></i> Domain 02
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-50 text-amber-800 text-xs font-extrabold uppercase tracking-wider border border-amber-200">
+                        <i class="fa-solid fa-head-side-cough text-amber-600"></i> Domain 02
                     </div>
                     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy-900">
                         Head &amp; Neck Oncology &amp; Thyroid Cancers
                     </h2>
-                    <p class="text-navy-600 leading-relaxed text-sm sm:text-base">
+                    <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
                         Comprehensive management for solid tumors of the oral cavity, tongue, jaw, larynx, pharynx, salivary glands, and thyroid. Procedures prioritize complete oncological clearance alongside preservation of speech, swallowing, and cosmetic contours.
                     </p>
 
                     <div class="space-y-3 pt-2">
-                        <h3 class="text-xs font-extrabold uppercase tracking-wider text-navy-500">Key Surgical Procedures &amp; Interventions:</h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm font-semibold text-navy-700">
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-500 text-xs"></i><span>Total &amp; Hemithyroidectomy</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-500 text-xs"></i><span>Central &amp; Lateral Neck Dissections</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-500 text-xs"></i><span>Oral Cavity &amp; Tongue Tumor Resections</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-500 text-xs"></i><span>Composite Resections (Commando Surgery)</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-500 text-xs"></i><span>Parotidectomy &amp; Salivary Gland Tumors</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-500 text-xs"></i><span>Reconstructive Coordination (Local &amp; Free Flaps)</span></div>
+                        <h3 class="text-xs font-extrabold uppercase tracking-wider text-slate-500">Key Surgical Procedures &amp; Interventions:</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm font-semibold text-slate-700">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600 text-xs"></i><span>Total &amp; Hemithyroidectomy</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600 text-xs"></i><span>Central &amp; Lateral Neck Dissections</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600 text-xs"></i><span>Oral Cavity &amp; Tongue Tumor Resections</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600 text-xs"></i><span>Composite Resections (Commando Surgery)</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600 text-xs"></i><span>Parotidectomy &amp; Salivary Gland Tumors</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600 text-xs"></i><span>Reconstructive Coordination (Local &amp; Free Flaps)</span></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <hr class="border-navy-100">
-
         <!-- 3. GYNECOLOGICAL ONCOLOGY -->
-        <section id="gynaecology" class="scroll-mt-36">
+        <section id="gynaecology" class="scroll-mt-36 bg-white p-8 sm:p-12 rounded-3xl border border-slate-200 shadow-sm">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
                 <div class="lg:col-span-7 space-y-5">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-coral-50 text-coral-700 text-xs font-extrabold uppercase tracking-wider border border-coral-200">
-                        <i class="fa-solid fa-venus text-coral-600"></i> Domain 03
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-purple-50 text-purple-700 text-xs font-extrabold uppercase tracking-wider border border-purple-200">
+                        <i class="fa-solid fa-venus text-purple-600"></i> Domain 03
                     </div>
                     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy-900">
                         Gynecological Oncology (Ovarian &amp; Endometrial Cancers)
                     </h2>
-                    <p class="text-navy-600 leading-relaxed text-sm sm:text-base">
+                    <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
                         Specialized surgical treatment for cancers of the female reproductive system, including ovarian, endometrial (uterine), and cervical cancers. Emphasis is placed on radical cytoreduction to achieve microscopic clearance and enhance overall survival.
                     </p>
 
                     <div class="space-y-3 pt-2">
-                        <h3 class="text-xs font-extrabold uppercase tracking-wider text-navy-500">Key Surgical Procedures &amp; Interventions:</h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm font-semibold text-navy-700">
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-coral-500 text-xs"></i><span>Cytoreductive / Debulking Surgery (Ovarian)</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-coral-500 text-xs"></i><span>Interval Debulking Surgery (Post-NACT)</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-coral-500 text-xs"></i><span>Total Hysterectomy &amp; Bilateral Salpingo-Oophorectomy</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-coral-500 text-xs"></i><span>Radical Hysterectomy (Cervical Malignancies)</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-coral-500 text-xs"></i><span>Pelvic &amp; Para-Aortic Lymphadenectomy</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-coral-500 text-xs"></i><span>Fertility-Sparing Surgeries for Early Stages</span></div>
+                        <h3 class="text-xs font-extrabold uppercase tracking-wider text-slate-500">Key Surgical Procedures &amp; Interventions:</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm font-semibold text-slate-700">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-600 text-xs"></i><span>Cytoreductive / Debulking Surgery (Ovarian)</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-600 text-xs"></i><span>Interval Debulking Surgery (Post-NACT)</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-600 text-xs"></i><span>Total Hysterectomy &amp; Bilateral Salpingo-Oophorectomy</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-600 text-xs"></i><span>Radical Hysterectomy (Cervical Malignancies)</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-600 text-xs"></i><span>Pelvic &amp; Para-Aortic Lymphadenectomy</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-purple-600 text-xs"></i><span>Fertility-Sparing Surgeries for Early Stages</span></div>
                         </div>
                     </div>
                 </div>
 
                 <div class="lg:col-span-5">
-                    <!-- Image Placeholder for Gynecological Oncology -->
-                    <!-- TODO: Replace placeholder below with your photo: <img src="images/gynecological-oncology.jpg" alt="Gynecological Oncology" class="w-full h-80 object-cover rounded-2xl shadow-md"> -->
-                    <div class="img-placeholder-card rounded-2xl p-8 aspect-[4/3] flex flex-col items-center justify-center text-center shadow-sm relative overflow-hidden group">
-                        <div class="w-20 h-20 rounded-2xl bg-white shadow-md flex items-center justify-center text-coral-600 text-3xl mb-4 group-hover:scale-110 transition-transform">
+                    <div class="img-placeholder-card rounded-2xl p-8 aspect-[4/3] flex flex-col items-center justify-center text-center shadow-xs relative overflow-hidden group">
+                        <div class="w-20 h-20 rounded-2xl bg-purple-50 border border-purple-100 shadow-sm flex items-center justify-center text-purple-600 text-3xl mb-4 group-hover:scale-110 transition-transform">
                             <i class="fa-solid fa-venus"></i>
                         </div>
-                        <span class="inline-block bg-coral-100 text-coral-800 text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider mb-2">Photo Placeholder</span>
+                        <span class="inline-block bg-purple-100 text-purple-800 text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider mb-2">Photo Placeholder</span>
                         <h4 class="font-extrabold text-navy-900 text-base">Gynecological Oncology Image</h4>
-                        <p class="text-xs text-navy-500 mt-1 max-w-xs">Ready for doctor / clinical picture<br><span class="text-[10px] text-navy-400 font-mono">(Recommended: 1200 x 900 px)</span></p>
+                        <p class="text-xs text-slate-500 mt-1 max-w-xs">Ready for doctor / clinical picture<br><span class="text-[10px] text-slate-400 font-mono">(Recommended: 1200 x 900 px)</span></p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <hr class="border-navy-100">
-
         <!-- 4. MUSCULOSKELETAL & SOFT TISSUE SARCOMAS -->
-        <section id="sarcoma" class="scroll-mt-36">
+        <section id="sarcoma" class="scroll-mt-36 bg-white p-8 sm:p-12 rounded-3xl border border-slate-200 shadow-sm">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
                 <div class="lg:col-span-5 order-2 lg:order-1">
-                    <!-- Image Placeholder for Sarcoma Management -->
-                    <!-- TODO: Replace placeholder below with your photo: <img src="images/sarcoma-surgery.jpg" alt="Sarcoma Management" class="w-full h-80 object-cover rounded-2xl shadow-md"> -->
-                    <div class="img-placeholder-card rounded-2xl p-8 aspect-[4/3] flex flex-col items-center justify-center text-center shadow-sm relative overflow-hidden group">
-                        <div class="w-20 h-20 rounded-2xl bg-white shadow-md flex items-center justify-center text-teal-600 text-3xl mb-4 group-hover:scale-110 transition-transform">
+                    <div class="img-placeholder-card rounded-2xl p-8 aspect-[4/3] flex flex-col items-center justify-center text-center shadow-xs relative overflow-hidden group">
+                        <div class="w-20 h-20 rounded-2xl bg-blue-50 border border-blue-100 shadow-sm flex items-center justify-center text-blue-600 text-3xl mb-4 group-hover:scale-110 transition-transform">
                             <i class="fa-solid fa-bone"></i>
                         </div>
-                        <span class="inline-block bg-teal-100 text-teal-800 text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider mb-2">Photo Placeholder</span>
+                        <span class="inline-block bg-blue-100 text-blue-800 text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider mb-2">Photo Placeholder</span>
                         <h4 class="font-extrabold text-navy-900 text-base">Sarcoma &amp; Bone Surgery Image</h4>
-                        <p class="text-xs text-navy-500 mt-1 max-w-xs">Ready for surgical case / clinical photo<br><span class="text-[10px] text-navy-400 font-mono">(Recommended: 1200 x 900 px)</span></p>
+                        <p class="text-xs text-slate-500 mt-1 max-w-xs">Ready for surgical case / clinical photo<br><span class="text-[10px] text-slate-400 font-mono">(Recommended: 1200 x 900 px)</span></p>
                     </div>
                 </div>
 
                 <div class="lg:col-span-7 space-y-5 order-1 lg:order-2">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-teal-50 text-teal-700 text-xs font-extrabold uppercase tracking-wider border border-teal-200">
-                        <i class="fa-solid fa-bone text-teal-600"></i> Domain 04
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-extrabold uppercase tracking-wider border border-blue-200">
+                        <i class="fa-solid fa-bone text-blue-600"></i> Domain 04
                     </div>
                     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy-900">
                         Musculoskeletal &amp; Soft Tissue Sarcomas
                     </h2>
-                    <p class="text-navy-600 leading-relaxed text-sm sm:text-base">
+                    <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
                         Specialized in limb-sparing oncological resections and management of complex soft tissue and bone sarcomas in extremities, trunk, and retroperitoneum. Supported by Dr. Gayathri's first-prize distinction in the State Ortho-Oncology Quiz (2022).
                     </p>
 
                     <div class="space-y-3 pt-2">
-                        <h3 class="text-xs font-extrabold uppercase tracking-wider text-navy-500">Key Surgical Procedures &amp; Interventions:</h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm font-semibold text-navy-700">
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-teal-500 text-xs"></i><span>Limb Salvage / Sparing Surgery</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-teal-500 text-xs"></i><span>Wide Local Excision with 3D Clear Margins</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-teal-500 text-xs"></i><span>Retroperitoneal Sarcoma Resections</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-teal-500 text-xs"></i><span>Chest Wall &amp; Abdominal Wall Sarcoma Resections</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-teal-500 text-xs"></i><span>Compartment Resections</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-teal-500 text-xs"></i><span>Multidisciplinary Plastic Reconstruction Coordination</span></div>
+                        <h3 class="text-xs font-extrabold uppercase tracking-wider text-slate-500">Key Surgical Procedures &amp; Interventions:</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm font-semibold text-slate-700">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-600 text-xs"></i><span>Limb Salvage / Sparing Surgery</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-600 text-xs"></i><span>Wide Local Excision with 3D Clear Margins</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-600 text-xs"></i><span>Retroperitoneal Sarcoma Resections</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-600 text-xs"></i><span>Chest Wall &amp; Abdominal Wall Sarcoma Resections</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-600 text-xs"></i><span>Compartment Resections</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-600 text-xs"></i><span>Multidisciplinary Plastic Reconstruction Coordination</span></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <hr class="border-navy-100">
-
         <!-- 5. MINIMALLY INVASIVE (LAPAROSCOPIC & ROBOTIC) SURGERY -->
-        <section id="robotic" class="scroll-mt-36">
+        <section id="robotic" class="scroll-mt-36 bg-white p-8 sm:p-12 rounded-3xl border border-slate-200 shadow-sm">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
                 <div class="lg:col-span-7 space-y-5">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-navy-100 text-navy-800 text-xs font-extrabold uppercase tracking-wider border border-navy-200">
-                        <i class="fa-solid fa-robot text-teal-600"></i> Domain 05
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-50 text-cyan-800 text-xs font-extrabold uppercase tracking-wider border border-cyan-200">
+                        <i class="fa-solid fa-robot text-cyan-600"></i> Domain 05
                     </div>
                     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy-900">
                         Minimally Invasive (Laparoscopic &amp; Robotic) Surgery
                     </h2>
-                    <p class="text-navy-600 leading-relaxed text-sm sm:text-base">
+                    <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
                         Cutting-edge minimally invasive keyhole and robotic-assisted surgical techniques allowing superior visualization, tremor-free 3D precision maneuvers in tight anatomical corridors, and expedited recovery.
                     </p>
 
                     <div class="space-y-3 pt-2">
-                        <h3 class="text-xs font-extrabold uppercase tracking-wider text-navy-500">Clinical Advantages &amp; Procedures:</h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm font-semibold text-navy-700">
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-teal-500 text-xs"></i><span>Robotic-Assisted Pelvic &amp; Abdominal Surgery</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-teal-500 text-xs"></i><span>Advanced Laparoscopic Oncological Resections</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-teal-500 text-xs"></i><span>Significantly Reduced Intraoperative Blood Loss</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-teal-500 text-xs"></i><span>Minimal Incision Scarring &amp; Less Post-Op Pain</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-teal-500 text-xs"></i><span>Shorter Hospitalization &amp; Faster Recovery</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-teal-500 text-xs"></i><span>High-Definition 3D Endoscopic Magnification</span></div>
+                        <h3 class="text-xs font-extrabold uppercase tracking-wider text-slate-500">Clinical Advantages &amp; Procedures:</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm font-semibold text-slate-700">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-cyan-600 text-xs"></i><span>Robotic-Assisted Pelvic &amp; Abdominal Surgery</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-cyan-600 text-xs"></i><span>Advanced Laparoscopic Oncological Resections</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-cyan-600 text-xs"></i><span>Significantly Reduced Intraoperative Blood Loss</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-cyan-600 text-xs"></i><span>Minimal Incision Scarring &amp; Less Post-Op Pain</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-cyan-600 text-xs"></i><span>Shorter Hospitalization &amp; Faster Recovery</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-cyan-600 text-xs"></i><span>High-Definition 3D Endoscopic Magnification</span></div>
                         </div>
                     </div>
                 </div>
 
                 <div class="lg:col-span-5">
-                    <!-- Image Placeholder for Robotic & Laparoscopic Surgery -->
-                    <!-- TODO: Replace placeholder below with your photo: <img src="images/robotic-surgery.jpg" alt="Robotic Surgery" class="w-full h-80 object-cover rounded-2xl shadow-md"> -->
-                    <div class="img-placeholder-card rounded-2xl p-8 aspect-[4/3] flex flex-col items-center justify-center text-center shadow-sm relative overflow-hidden group">
-                        <div class="w-20 h-20 rounded-2xl bg-white shadow-md flex items-center justify-center text-navy-700 text-3xl mb-4 group-hover:scale-110 transition-transform">
+                    <div class="img-placeholder-card rounded-2xl p-8 aspect-[4/3] flex flex-col items-center justify-center text-center shadow-xs relative overflow-hidden group">
+                        <div class="w-20 h-20 rounded-2xl bg-cyan-50 border border-cyan-100 shadow-sm flex items-center justify-center text-cyan-600 text-3xl mb-4 group-hover:scale-110 transition-transform">
                             <i class="fa-solid fa-robot"></i>
                         </div>
-                        <span class="inline-block bg-navy-100 text-navy-800 text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider mb-2">Photo Placeholder</span>
+                        <span class="inline-block bg-cyan-100 text-cyan-800 text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider mb-2">Photo Placeholder</span>
                         <h4 class="font-extrabold text-navy-900 text-base">Robotic Console / Laparoscopy</h4>
-                        <p class="text-xs text-navy-500 mt-1 max-w-xs">Ready for robotic console / OT photo<br><span class="text-[10px] text-navy-400 font-mono">(Recommended: 1200 x 900 px)</span></p>
+                        <p class="text-xs text-slate-500 mt-1 max-w-xs">Ready for robotic console / OT photo<br><span class="text-[10px] text-slate-400 font-mono">(Recommended: 1200 x 900 px)</span></p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <hr class="border-navy-100">
-
         <!-- 6. ORGAN-PRESERVATION SURGERIES -->
-        <section id="organ-preservation" class="scroll-mt-36">
+        <section id="organ-preservation" class="scroll-mt-36 bg-white p-8 sm:p-12 rounded-3xl border border-slate-200 shadow-sm">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
                 <div class="lg:col-span-5 order-2 lg:order-1">
-                    <!-- Image Placeholder for Organ Preservation -->
-                    <!-- TODO: Replace placeholder below with your photo: <img src="images/organ-preservation.jpg" alt="Organ Preservation Surgery" class="w-full h-80 object-cover rounded-2xl shadow-md"> -->
-                    <div class="img-placeholder-card rounded-2xl p-8 aspect-[4/3] flex flex-col items-center justify-center text-center shadow-sm relative overflow-hidden group">
-                        <div class="w-20 h-20 rounded-2xl bg-white shadow-md flex items-center justify-center text-teal-600 text-3xl mb-4 group-hover:scale-110 transition-transform">
+                    <div class="img-placeholder-card rounded-2xl p-8 aspect-[4/3] flex flex-col items-center justify-center text-center shadow-xs relative overflow-hidden group">
+                        <div class="w-20 h-20 rounded-2xl bg-indigo-50 border border-indigo-100 shadow-sm flex items-center justify-center text-indigo-600 text-3xl mb-4 group-hover:scale-110 transition-transform">
                             <i class="fa-solid fa-shield-heart"></i>
                         </div>
-                        <span class="inline-block bg-teal-100 text-teal-800 text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider mb-2">Photo Placeholder</span>
+                        <span class="inline-block bg-indigo-100 text-indigo-800 text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider mb-2">Photo Placeholder</span>
                         <h4 class="font-extrabold text-navy-900 text-base">Organ-Preservation Image</h4>
-                        <p class="text-xs text-navy-500 mt-1 max-w-xs">Ready for clinical / patient consultation photo<br><span class="text-[10px] text-navy-400 font-mono">(Recommended: 1200 x 900 px)</span></p>
+                        <p class="text-xs text-slate-500 mt-1 max-w-xs">Ready for clinical / patient consultation photo<br><span class="text-[10px] text-slate-400 font-mono">(Recommended: 1200 x 900 px)</span></p>
                     </div>
                 </div>
 
                 <div class="lg:col-span-7 space-y-5 order-1 lg:order-2">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-teal-50 text-teal-700 text-xs font-extrabold uppercase tracking-wider border border-teal-200">
-                        <i class="fa-solid fa-shield-heart text-teal-600"></i> Domain 06
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-extrabold uppercase tracking-wider border border-indigo-200">
+                        <i class="fa-solid fa-shield-heart text-indigo-600"></i> Domain 06
                     </div>
                     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy-900">
                         Organ Preservation Surgeries
                     </h2>
-                    <p class="text-navy-600 leading-relaxed text-sm sm:text-base">
+                    <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
                         A core philosophy in modern surgical oncology: eradicating cancer thoroughly without needlessly sacrificing healthy surrounding anatomy. Designed to safeguard vital physiological function, appearance, and psychological well-being.
                     </p>
 
                     <div class="space-y-3 pt-2">
-                        <h3 class="text-xs font-extrabold uppercase tracking-wider text-navy-500">Key Organ-Preserving Approaches:</h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm font-semibold text-navy-700">
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-teal-500 text-xs"></i><span>Breast Conservation Therapy (BCT)</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-teal-500 text-xs"></i><span>Laryngeal &amp; Voice-Preserving Surgeries</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-teal-500 text-xs"></i><span>Limb-Sparing Musculoskeletal Resections</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-teal-500 text-xs"></i><span>Sphincter-Saving Colorectal Procedures</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-teal-500 text-xs"></i><span>Fertility-Preserving Gynecological Options</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-teal-500 text-xs"></i><span>Structured Post-Operative Rehabilitation</span></div>
+                        <h3 class="text-xs font-extrabold uppercase tracking-wider text-slate-500">Key Organ-Preserving Approaches:</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm font-semibold text-slate-700">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-indigo-600 text-xs"></i><span>Breast Conservation Therapy (BCT)</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-indigo-600 text-xs"></i><span>Laryngeal &amp; Voice-Preserving Surgeries</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-indigo-600 text-xs"></i><span>Limb-Sparing Musculoskeletal Resections</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-indigo-600 text-xs"></i><span>Sphincter-Saving Colorectal Procedures</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-indigo-600 text-xs"></i><span>Fertility-Preserving Gynecological Options</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-indigo-600 text-xs"></i><span>Structured Post-Operative Rehabilitation</span></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <hr class="border-navy-100">
-
         <!-- 7. GASTROINTESTINAL & ABDOMINAL ONCOLOGY -->
-        <section id="gi-oncology" class="scroll-mt-36">
+        <section id="gi-oncology" class="scroll-mt-36 bg-white p-8 sm:p-12 rounded-3xl border border-slate-200 shadow-sm">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
                 <div class="lg:col-span-7 space-y-5">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gold-50 text-gold-700 text-xs font-extrabold uppercase tracking-wider border border-gold-200">
-                        <i class="fa-solid fa-bacterium text-gold-600"></i> Domain 07
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-50 text-amber-800 text-xs font-extrabold uppercase tracking-wider border border-amber-200">
+                        <i class="fa-solid fa-bacterium text-amber-600"></i> Domain 07
                     </div>
                     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy-900">
                         Gastrointestinal &amp; Abdominal Oncology
                     </h2>
-                    <p class="text-navy-600 leading-relaxed text-sm sm:text-base">
+                    <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
                         Surgical resection of solid malignancies affecting the gastrointestinal tract, stomach, colon, rectum, and abdominal organs. Combines high-precision oncological margin control with advanced anastomotic techniques.
                     </p>
 
                     <div class="space-y-3 pt-2">
-                        <h3 class="text-xs font-extrabold uppercase tracking-wider text-navy-500">Key Surgical Procedures &amp; Interventions:</h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm font-semibold text-navy-700">
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-500 text-xs"></i><span>Radical Colectomies &amp; Hemicolectomies</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-500 text-xs"></i><span>Low Anterior Resection (LAR) &amp; Ultra-Low LAR</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-500 text-xs"></i><span>Gastrectomy (Subtotal &amp; Total with D2 Lymphadenectomy)</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-500 text-xs"></i><span>Abdominoperineal Resection (APR)</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-500 text-xs"></i><span>GIST &amp; Small Bowel Tumor Resections</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-gold-500 text-xs"></i><span>Complex Abdominal Wall Reconstructions</span></div>
+                        <h3 class="text-xs font-extrabold uppercase tracking-wider text-slate-500">Key Surgical Procedures &amp; Interventions:</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm font-semibold text-slate-700">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600 text-xs"></i><span>Radical Colectomies &amp; Hemicolectomies</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600 text-xs"></i><span>Low Anterior Resection (LAR) &amp; Ultra-Low LAR</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600 text-xs"></i><span>Gastrectomy (Subtotal &amp; Total with D2 Lymphadenectomy)</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600 text-xs"></i><span>Abdominoperineal Resection (APR)</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600 text-xs"></i><span>GIST &amp; Small Bowel Tumor Resections</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600 text-xs"></i><span>Complex Abdominal Wall Reconstructions</span></div>
                         </div>
                     </div>
                 </div>
 
                 <div class="lg:col-span-5">
-                    <!-- Image Placeholder for GI Oncology -->
-                    <!-- TODO: Replace placeholder below with your photo: <img src="images/gi-oncology.jpg" alt="Gastrointestinal Oncology" class="w-full h-80 object-cover rounded-2xl shadow-md"> -->
-                    <div class="img-placeholder-card rounded-2xl p-8 aspect-[4/3] flex flex-col items-center justify-center text-center shadow-sm relative overflow-hidden group">
-                        <div class="w-20 h-20 rounded-2xl bg-white shadow-md flex items-center justify-center text-gold-600 text-3xl mb-4 group-hover:scale-110 transition-transform">
+                    <div class="img-placeholder-card rounded-2xl p-8 aspect-[4/3] flex flex-col items-center justify-center text-center shadow-xs relative overflow-hidden group">
+                        <div class="w-20 h-20 rounded-2xl bg-amber-50 border border-amber-100 shadow-sm flex items-center justify-center text-amber-600 text-3xl mb-4 group-hover:scale-110 transition-transform">
                             <i class="fa-solid fa-bacterium"></i>
                         </div>
-                        <span class="inline-block bg-gold-100 text-gold-800 text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider mb-2">Photo Placeholder</span>
+                        <span class="inline-block bg-amber-100 text-amber-800 text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider mb-2">Photo Placeholder</span>
                         <h4 class="font-extrabold text-navy-900 text-base">Gastrointestinal Oncology Image</h4>
-                        <p class="text-xs text-navy-500 mt-1 max-w-xs">Ready for surgical / clinical photo<br><span class="text-[10px] text-navy-400 font-mono">(Recommended: 1200 x 900 px)</span></p>
+                        <p class="text-xs text-slate-500 mt-1 max-w-xs">Ready for surgical / clinical photo<br><span class="text-[10px] text-slate-400 font-mono">(Recommended: 1200 x 900 px)</span></p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <hr class="border-navy-100">
-
         <!-- 8. MULTIDISCIPLINARY TUMOR BOARD CARE -->
-        <section id="tumor-board" class="scroll-mt-36">
+        <section id="tumor-board" class="scroll-mt-36 bg-white p-8 sm:p-12 rounded-3xl border border-slate-200 shadow-sm">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
                 <div class="lg:col-span-5 order-2 lg:order-1">
-                    <!-- Image Placeholder for Tumor Board -->
-                    <!-- TODO: Replace placeholder below with your photo: <img src="images/tumor-board.jpg" alt="Multidisciplinary Tumor Board Care" class="w-full h-80 object-cover rounded-2xl shadow-md"> -->
-                    <div class="img-placeholder-card rounded-2xl p-8 aspect-[4/3] flex flex-col items-center justify-center text-center shadow-sm relative overflow-hidden group">
-                        <div class="w-20 h-20 rounded-2xl bg-white shadow-md flex items-center justify-center text-teal-600 text-3xl mb-4 group-hover:scale-110 transition-transform">
+                    <div class="img-placeholder-card rounded-2xl p-8 aspect-[4/3] flex flex-col items-center justify-center text-center shadow-xs relative overflow-hidden group">
+                        <div class="w-20 h-20 rounded-2xl bg-slate-100 border border-slate-200 shadow-sm flex items-center justify-center text-slate-700 text-3xl mb-4 group-hover:scale-110 transition-transform">
                             <i class="fa-solid fa-users-medical"></i>
                         </div>
-                        <span class="inline-block bg-teal-100 text-teal-800 text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider mb-2">Photo Placeholder</span>
+                        <span class="inline-block bg-slate-200 text-slate-800 text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider mb-2">Photo Placeholder</span>
                         <h4 class="font-extrabold text-navy-900 text-base">Tumor Board Consultation</h4>
-                        <p class="text-xs text-navy-500 mt-1 max-w-xs">Ready for team meeting / clinic photo<br><span class="text-[10px] text-navy-400 font-mono">(Recommended: 1200 x 900 px)</span></p>
+                        <p class="text-xs text-slate-500 mt-1 max-w-xs">Ready for team meeting / clinic photo<br><span class="text-[10px] text-slate-400 font-mono">(Recommended: 1200 x 900 px)</span></p>
                     </div>
                 </div>
 
                 <div class="lg:col-span-7 space-y-5 order-1 lg:order-2">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-teal-50 text-teal-700 text-xs font-extrabold uppercase tracking-wider border border-teal-200">
-                        <i class="fa-solid fa-users-medical text-teal-600"></i> Domain 08
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-100 text-slate-800 text-xs font-extrabold uppercase tracking-wider border border-slate-300">
+                        <i class="fa-solid fa-users-medical text-slate-700"></i> Domain 08
                     </div>
                     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy-900">
                         Multidisciplinary Tumor Board (MDT) Care
                     </h2>
-                    <p class="text-navy-600 leading-relaxed text-sm sm:text-base">
+                    <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
                         Every patient benefits from collaborative case evaluation. Dr. Gayathri coordinates in real-time with medical oncologists, radiation oncologists, diagnostic radiologists, and oncopathologists at AIG Hospitals to create a synchronized, personalized road map for care.
                     </p>
 
                     <div class="space-y-3 pt-2">
-                        <h3 class="text-xs font-extrabold uppercase tracking-wider text-navy-500">Core Pillars of MDT Collaboration:</h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm font-semibold text-navy-700">
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-teal-500 text-xs"></i><span>Synchronized Pre-Operative Staging &amp; Imaging</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-teal-500 text-xs"></i><span>Neoadjuvant Chemotherapy / Radiation Timing</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-teal-500 text-xs"></i><span>Individualized Molecular &amp; Genetic Tumor Profiling</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-teal-500 text-xs"></i><span>Post-Operative Adjuvant Therapy Planning</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-teal-500 text-xs"></i><span>Palliative Care &amp; Pain Management Integration</span></div>
-                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-teal-500 text-xs"></i><span>Long-Term Surveillance &amp; Survivorship Support</span></div>
+                        <h3 class="text-xs font-extrabold uppercase tracking-wider text-slate-500">Core Pillars of MDT Collaboration:</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm font-semibold text-slate-700">
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-600 text-xs"></i><span>Synchronized Pre-Operative Staging &amp; Imaging</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-600 text-xs"></i><span>Neoadjuvant Chemotherapy / Radiation Timing</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-600 text-xs"></i><span>Individualized Molecular &amp; Genetic Tumor Profiling</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-600 text-xs"></i><span>Post-Operative Adjuvant Therapy Planning</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-600 text-xs"></i><span>Palliative Care &amp; Pain Management Integration</span></div>
+                            <div class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-600 text-xs"></i><span>Long-Term Surveillance &amp; Survivorship Support</span></div>
                         </div>
                     </div>
                 </div>
@@ -554,16 +541,16 @@
         </section>
 
         <!-- CTA BANNER -->
-        <section class="bg-gradient-to-r from-navy-900 via-navy-800 to-teal-900 text-white rounded-3xl p-8 sm:p-12 shadow-xl text-center space-y-6">
-            <span class="inline-block bg-white/10 text-teal-300 text-xs font-extrabold px-4 py-1.5 rounded-full uppercase tracking-wider border border-white/15">
+        <section class="bg-gradient-to-r from-navy-900 via-navy-800 to-blue-900 text-white rounded-3xl p-8 sm:p-12 shadow-xl text-center space-y-6">
+            <span class="inline-block bg-white/10 text-cyan-300 text-xs font-extrabold px-4 py-1.5 rounded-full uppercase tracking-wider border border-white/15">
                 Specialist Consultation
             </span>
             <h2 class="text-2xl sm:text-4xl font-extrabold">Need an Expert Oncological Evaluation?</h2>
-            <p class="text-navy-200 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+            <p class="text-slate-300 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
                 Consult with Dr. Gayathri Kolagatla at AIG Hospitals, Hyderabad for evidence-based diagnosis, second opinions, and personalized surgical cancer care.
             </p>
             <div class="pt-2 flex flex-wrap justify-center gap-4">
-                <a href="index.html#appointment" class="bg-gradient-to-r from-teal-500 to-teal-400 hover:from-teal-600 hover:to-teal-500 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all text-sm inline-flex items-center">
+                <a href="index.html#appointment" class="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all text-sm inline-flex items-center">
                     <i class="fa-regular fa-calendar-check mr-2"></i>Book an Appointment
                 </a>
                 <a href="https://wa.me/916309029080?text=Hello%20Dr.%20Gayathri%2C%20I%20would%20like%20to%20inquire%20about%20a%20consultation." target="_blank" rel="noopener noreferrer" class="bg-green-600 hover:bg-green-500 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg transition-all text-sm inline-flex items-center">
@@ -575,7 +562,7 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-navy-950 text-navy-300 py-12 border-t border-navy-800" role="contentinfo">
+    <footer class="bg-navy-950 text-slate-300 py-12 border-t border-navy-800" role="contentinfo">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
                 <div class="space-y-4">
@@ -583,47 +570,47 @@
                         <svg class="w-10 h-10 flex-shrink-0" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                             <defs>
                                 <linearGradient id="sf-gk-ribbon-1" x1="6" y1="4" x2="42" y2="44" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#27ab83"/>
-                                    <stop offset="1" stop-color="#3ebd93"/>
+                                    <stop stop-color="#2563eb"/>
+                                    <stop offset="1" stop-color="#0284c7"/>
                                 </linearGradient>
                                 <linearGradient id="sf-gk-ribbon-2" x1="42" y1="4" x2="6" y2="44" gradientUnits="userSpaceOnUse">
-                                    <stop stop-color="#3ebd93"/>
-                                    <stop offset="1" stop-color="#f0b429"/>
+                                    <stop stop-color="#0284c7"/>
+                                    <stop offset="1" stop-color="#f59e0b"/>
                                 </linearGradient>
                             </defs>
                             <path d="M14 42 C20 34 35 22 35 15 C35 8.9 30.1 4 24 4 C17.9 4 13 8.9 13 15 C13 22 28 34 34 42" stroke="url(#sf-gk-ribbon-1)" stroke-width="4.5" stroke-linecap="round" fill="none"/>
                             <path d="M21 10 C22 9.4 23 9 24 9 C27.3 9 30 11.7 30 15 C30 20 22 27 16 34" stroke="url(#sf-gk-ribbon-2)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.9"/>
-                            <circle cx="24" cy="15" r="2.5" fill="#f0b429"/>
+                            <circle cx="24" cy="15" r="2.5" fill="#f59e0b"/>
                         </svg>
                         <div class="flex flex-col">
                             <span class="font-heading font-extrabold text-base text-white uppercase tracking-tight leading-none">DR. GAYATHRI KOLAGATLA</span>
-                            <span class="text-[9.5px] font-bold tracking-[0.16em] text-teal-400 uppercase mt-1">precision • excellence • compassion</span>
+                            <span class="text-[9.5px] font-bold tracking-[0.16em] text-cyan-400 uppercase mt-1">precision • excellence • compassion</span>
                         </div>
                     </div>
-                    <p class="text-sm text-navy-400 leading-relaxed">Consultant Surgical Oncologist at AIG Hospitals, Hyderabad. Specialized in precision oncological surgery, minimally invasive techniques, and multidisciplinary cancer care.</p>
+                    <p class="text-sm text-slate-400 leading-relaxed">Consultant Surgical Oncologist at AIG Hospitals, Hyderabad. Specialized in precision oncological surgery, minimally invasive techniques, and multidisciplinary cancer care.</p>
                 </div>
                 <div class="space-y-4">
                     <h4 class="font-extrabold text-white text-base">Quick Links</h4>
                     <nav class="space-y-2 text-sm" aria-label="Footer navigation">
-                        <a href="index.html#about" class="block hover:text-teal-400 transition-colors">About Dr. Gayathri</a>
-                        <a href="specialisations.html" class="block text-teal-400 font-bold">Specialisations</a>
-                        <a href="index.html#experience" class="block hover:text-teal-400 transition-colors">Experience &amp; Affiliations</a>
-                        <a href="honours.html" class="block hover:text-teal-400 transition-colors">Honours &amp; Awards</a>
-                        <a href="index.html#stories" class="block hover:text-teal-400 transition-colors">Patient Stories</a>
-                        <a href="index.html#faq" class="block hover:text-teal-400 transition-colors">FAQ</a>
-                        <a href="index.html#appointment" class="block hover:text-teal-400 transition-colors">Book Appointment</a>
+                        <a href="index.html#about" class="block hover:text-cyan-400 transition-colors">About Dr. Gayathri</a>
+                        <a href="specialisations.html" class="block text-cyan-400 font-bold">Specialisations</a>
+                        <a href="index.html#experience" class="block hover:text-cyan-400 transition-colors">Experience &amp; Affiliations</a>
+                        <a href="honours.html" class="block hover:text-cyan-400 transition-colors">Honours &amp; Awards</a>
+                        <a href="index.html#stories" class="block hover:text-cyan-400 transition-colors">Patient Stories</a>
+                        <a href="index.html#faq" class="block hover:text-cyan-400 transition-colors">FAQ</a>
+                        <a href="index.html#appointment" class="block hover:text-cyan-400 transition-colors">Book Appointment</a>
                     </nav>
                 </div>
                 <div class="space-y-4">
                     <h4 class="font-extrabold text-white text-base">Contact</h4>
                     <div class="space-y-2 text-sm">
-                        <a href="tel:+916309029080" class="block hover:text-teal-400 transition-colors"><i class="fa-solid fa-phone mr-2 text-xs"></i>+91-6309029080</a>
-                        <a href="mailto:gayathrireddykolagatla@gmail.com" class="block hover:text-teal-400 transition-colors"><i class="fa-solid fa-envelope mr-2 text-xs"></i>gayathrireddykolagatla@gmail.com</a>
+                        <a href="tel:+916309029080" class="block hover:text-cyan-400 transition-colors"><i class="fa-solid fa-phone mr-2 text-xs"></i>+91-6309029080</a>
+                        <a href="mailto:gayathrireddykolagatla@gmail.com" class="block hover:text-cyan-400 transition-colors"><i class="fa-solid fa-envelope mr-2 text-xs"></i>gayathrireddykolagatla@gmail.com</a>
                         <p><i class="fa-solid fa-location-dot mr-2 text-xs"></i>AIG Hospitals, Hyderabad, India</p>
                     </div>
                 </div>
             </div>
-            <div class="border-t border-navy-800 mt-10 pt-8 text-center text-xs text-navy-500">
+            <div class="border-t border-navy-800 mt-10 pt-8 text-center text-xs text-slate-500">
                 <p>&copy; 2026 Dr. Gayathri Kolagatla. All rights reserved.</p>
             </div>
         </div>
